@@ -73,7 +73,7 @@ Step 4: **Refresh settings**. We configure cube's building and maintain. Filter 
 
 ![](images/createcube_8.png)
 
-**Retention Threshold**: For some old and not-used segments, KAP could remove these segments automatically by configuring the **Retention Threshold**. For each new segment is built ready, KAP will check whether the old segments should be removed at the same time. The rule is if the time range between the latest segment's end date and the old segment's end date exceeds the **Retention Threshold**. For example, if the **Retention Threshold** is 1 year, and the latest segment's end date is today. Any old segments whose end dates before the today of the last year will be removed. If no automatical cleanup needed, please keep the default value to 0. 
+**Retention Threshold**. For some old and not-used segments, KAP could remove these segments automatically by configuring the **Retention Threshold**. For each new segment built ready, KAP will check whether the old segments should be removed at the same time. The rule is if the time range between the latest segment's end date and the old segment's end date exceeds the **Retention Threshold**. 
 
 > For example, if the **Retention Threshold** is 1 year, and the latest segment's end date is today. Any old segments whose end dates before the today of the last year will be removed. If no automatical cleanup needed, please keep the default value to 0. 
 
