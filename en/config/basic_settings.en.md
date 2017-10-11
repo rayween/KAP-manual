@@ -76,4 +76,14 @@ Restart KAP server to take effective.
 
 To disable, set `mail.enabled` back to `false`.
 
+<<<<<<< HEAD
 Administrator will get notifications for all jobs. Modeler and Analyst need entering email address into the “Notification List” at the first page of Cube wizard, and then will get notifications for that Cube.
+=======
+Administrator will get notifications for all jobs. Modeler and Analyst need entering email address into the `Notification List` at the first page of Cube wizard, and then will get notifications for that Cube.
+
+###Notes for KAP Warm Start after Config Parameters Modified
+
+The parameters defined in kylin.properties (global) will be loaded by default when KAP is started. Once being modified, they will not take effect until KAP is restarted.
+
+For the parameters of Hive and MapReduce, when the modifications are defined in kylin_hive_conf.xml, kylin_job_conf.xml and kylin_job_conf_inmem.xml, KAP needs not to be restarted, but the build Job shall be resubmitted. Each time the build Job is submitted to Yarn, the modified parameters will be read in real time. Please note that the configuration items will override the default parameters (such as hive-stie.xm and mapred-site.xml) in Hadoop cluster and can also be overwritten by Project and Cube configuration overriding.
+>>>>>>> 394874a... Addtion of Notes for KAP Warm Start after Config Parameters Modified
