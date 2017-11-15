@@ -1,6 +1,6 @@
 ## Kyligence ODBC Driver
 
-Kyligence ODBC Driver is a ODBC Driver that developed by Kyligence. It only supports the connection with KAP. It supports all functions of the Apache Kylin ODBC Driver. Applications with ODBC interface can access KAP through this driver.
+Kyligence ODBC Driver is a ODBC Driver developed by Kyligence. It enables all functions of the Apache Kylin ODBC Driver and only supports the connection with KAP. Applications with ODBC interface can access KAP through this driver.
 
 Kyligence ODBC Driver is a part of KAP Product line. The valid period of Kyligence ODBC Driver depends on that of KAP. 
 
@@ -12,7 +12,7 @@ Next, we will take Windows 7 as an example to introduce ODBC driver's installati
 
 1. Microsoft Visual C++ 2015 Redistributable is embedded in the install package. During the installation of Kyligence ODBC Driver, it will be installed first. If Microsoft Visual C++ 2015 Redistributable is already installed on your machine, this step will be skipped during installation.
 
-2. Kyligence ODBC Driver woule connect to KAP's server, so make sure the KAP is running properly.
+2. Kyligence ODBC Driver would connect to KAP's server, so make sure the KAP is running properly.
 
 ## Installation
 1. If you have previously installed Kyligence ODBC driver, please uninstall it first.

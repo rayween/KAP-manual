@@ -1,18 +1,10 @@
 ## Integration with MicroStrategy 10.X
 
-### Install ODBC Driver
+### Install Kyligence ODBC Driver
 
-Refer to this guide : [Kylin ODBC Driver Tutorial](../driver/odbc.en.md).
+For the installation information, please refer to [Kyligence ODBC Driver tutorial](../driver/kyligence-odbc.en.md).
 
-Please make sure to download and install Kylin ODBC Driver v1.6 64 bit or above. If you already installed Kylin ODBC Driver in your system, please uninstall it first.  
-
-The Kylin ODBC driver needs to be installed in the machine or virtual environment where your Microstrategy Intelligenec Server is installed. 
-
-### Create Local DSN
-
-Open your window ODBC Data Source Administrator (64bit) and create a system DSN that point to your KAP instance. 
-
-![](images/microstrategy_10_4/picture0.png)
+The Kyligence ODBC Driver needs to be installed in the machine or virtual environment where your Microstrategy Intelligenec Server is installed. 
 
 ### Setting Database Instance in MicroStrategy
 
@@ -21,8 +13,6 @@ Open your MicroStrategy Developer and connect to the project source where your a
 Once logged in, go to Administration -> Configuration manager -> Database Instance, create a new database instance with local ODBC connection that you created in the previous step. Under database connection type, please choose Generic DBMS.
 
 ![](images/microstrategy_10_4/picture1.png)
-
-
 
 Depending on your business scenario, you may need to create a new project and set Kylin database instance as your primary database instance or if there is an existing project, set Kylin database instance as one of your primary or non-primary database instance. You can achieve this by right click on your project, and go to project configuration -> database instance. 
 

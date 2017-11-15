@@ -16,4 +16,4 @@
 
 [MicroStrategy](microstrategy_10_4.cn.md)
 
-[Qlik](qlik.cn.md)
+[Qlik Sense](qlik.cn.md)

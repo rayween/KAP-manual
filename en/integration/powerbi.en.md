@@ -1,6 +1,6 @@
-## Power BI Desktop Integration
+## Integration with Power BI Desktop
 
-Microsoft Power BI Desktop is a professional business intelligence analysis tool providing rich functionality and experience for data visualization and processing to user.
+Microsoft Power BI Desktop is a professional business intelligence analysis tool providing rich functionality and experience for data visualization and processing to user. This article will guide you to connect KAP with Power BI Desktop. 
 
 ### Install Kyligence ODBC Driver
 For the installation information, please refer to [Kyligence ODBC Driver tutorial](../driver/kyligence-odbc.en.md).

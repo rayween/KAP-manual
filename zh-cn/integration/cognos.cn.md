@@ -1,18 +1,14 @@
-## Cognos 10.X集成
+## 与 Cognos 10.X集成
 
-参考页面[KAP ODBC 驱动程序教程](../driver/odbc.cn.html)。安装KAP ODBC Driver v1.6 64 bit或更高版本。如果你安装有早前版本，请卸载后再安装。
+### 安装 Kyligence ODBC 驱动程序
 
-Kylin ODBC Driver需要安装在Cognos Server所在的服务器上。
+有关安装信息，参考页面 [Kyligence ODBC 驱动程序教程](../driver/kyligence-odbc.cn.md)。
 
-### 创建本地DSN
-
-打开window上的ODBC数据源管理器（64位）创建一个DSN连接KAP。
-
-![](images/cognos/0.png)
+Kyligence ODBC Driver需要安装在Cognos Server所在的服务器上。
 
 ### 创建一个Cognos数据源
 
-DSN创建好后打开一个已有Cognos项目或者创建一个新项目。在本例中我们将创建一个新项目。
+在安装完 Kyligence ODBC Driver 并配置好 DSN 后，打开一个已有Cognos项目或者创建一个新项目。在本例中我们将创建一个新项目。
 
 ![](images/cognos/1.png)
 

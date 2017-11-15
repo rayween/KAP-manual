@@ -1,16 +1,10 @@
-## MicroStrategy 10.X 集成
+## 与 MicroStrategy 10.X 集成
 
-### 安装 ODBC Driver
+### 安装 Kyligence ODBC 驱动程序
 
-参考页面[KAP ODBC 驱动程序教程](../driver/odbc.cn.html)安装KAP ODBC Driver v1.6 64 bit或更高版本。如果你安装有早前版本，请卸载后再安装。
+有关安装信息，参考页面 [Kyligence ODBC 驱动程序教程](../driver/kyligence-odbc.cn.md)。
 
-Kylin ODBC Driver需要安装在MicroStrategy Intelligence Server所在的服务器上。
-
-### 创建本地DSN
-
-打开window上的ODBC数据源管理器（64位）创建一个DSN连接KAP。
-
-![](images/microstrategy_10_4/picture0.png)
+Kyligence ODBC Driver需要安装在MicroStrategy Intelligence Server所在的服务器上。
 
 ### 在MicroStrategy中配置Database Instance
 

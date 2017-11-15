@@ -6,6 +6,4 @@
 
 [JDBC驱动](jdbc.cn.md)
 
-[Kylin ODBC驱动](kylin-odbc.cn.md)
-
 [Kyligence ODBC驱动](kyligence-odbc.cn.md)

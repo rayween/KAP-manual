@@ -1,6 +1,6 @@
 ## Kyligence ODBC 驱动程序
 
-Kyligence ODBC 驱动程序是 Kyligence 公司自主研发的一款 ODBC 驱动程序。它仅支持与 KAP 连接，并支持 Apache Kylin ODBC 驱动程序的全部功能，支持 ODBC 接口的应用可以通过该驱动程序访问 KAP 进行数据查询。
+Kyligence ODBC 驱动程序是 Kyligence 公司自主研发的一款 ODBC 驱动程序。它仅支持与 KAP 连接，并支持 Apache Kylin ODBC 驱动程序的全部功能。支持 ODBC 接口的应用可以通过该驱动程序访问 KAP 进行数据查询。
 
 Kyligence ODBC 驱动程序是 KAP 商业发行版中的一部分。Kyligence ODBC Driver 的有效使用期限与 KAP 一致。
 
@@ -20,7 +20,7 @@ Kyligence ODBC 驱动程序目前仅支持 Windows 环境。
 
 1.  如果机器上已经安装过 Kyligence ODBC 驱动程序，首先卸载已有 Kyligence ODBC 驱动程序。
 
-2.  在 [Kyligence Account 页面](http://account.kyligence.io)申请下载 Kyligence ODBC 驱动程序，并运行安装。
+2.  在 [Kyligence Account 页面](http://account.kyligence.io)申请下载 Kyligence ODBC 驱动程序，并运行安装。
 
     32 位应用程序：请安装使用 kyligence_odbc.x86.exe
 
@@ -63,5 +63,5 @@ Kyligence ODBC 驱动程序目前仅支持 Windows 环境。
 
 ## 特别提醒
 
-如果用户希望在其他应用程序中使用 Kyligence ODBC 驱动程序连接 KAP，有关信息，请访问本手册[与第三方 BI 工具集成](../integration/README.md)章节。
+如果用户希望在其他应用程序中使用 Kyligence ODBC 驱动程序连接 KAP，可访问本手册[与第三方 BI 工具集成](../integration/README.md)章节，了解相关信息。
 

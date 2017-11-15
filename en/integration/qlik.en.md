@@ -1,22 +1,10 @@
 ## Integration with Qlik Sense
 
-Qlik Sense delivers intuitive platform solutions for self-service data visualization, guided analytics applications, embedded analytics and reporting. It is a new player in the Business Intelligence (BI) tools world, with a high growth since 2013. It has connectors with Hadoop Database (Hive and Impala). Now it can integrate with KAP. This article will guide you through the process of connecting KAP with Qlik Sense.  
+Qlik Sense delivers intuitive platform solutions for self-service data visualization, guided analytics applications, embedded analytics and reporting. It is a new player in the Business Intelligence (BI) tools world, with a high growth since 2013. It has connectors with Hadoop Database (Hive and Impala). Now it can be integrated with KAP. This article will guide you to connect KAP with Qlik Sense.  
 
-### Pre-requisites
+### Install Kyligence ODBC Driver
 
-Before integrating with Qlik Sense, please make sure to download and install the following required applications. If you already installed Kylin ODBC Driver in your machine, please uninstall it first.
-
-- [Kylin ODBC](http://kylin.apache.org/docs15/tutorial/odbc.html) 
-- [Qlik Sense Desktop](http://www.qlik.com/us/try-or-buy/download-qlikview) 
-
-
-You may find the detailed installation and configuration guides as below.
-
-#### Configure Local DSN
-
-Please refer to the guide in the page of [ODBC Driver](http://docs.kyligence.io/v2.5/en/driver/odbc.en.html) to install and configure your local DSN. After going through the steps in this page, you will see the pup-up dialog **Apache Kylin DSN Configuration** as blow, please select the project of **learn_kylin**, then click **Done**.
-
-![Apache Kylin DSN Configuration](images/Qlik/apache_kylin_dsn_configuration.png)
+For the installation information, please refer to [Kyligence ODBC Driver tutorial](../driver/kyligence-odbc.en.md).
 
 #### Install Qlik Sense
 

@@ -1,7 +1,8 @@
-## Tableau 10.x 集成
+## 与 Tableau 10.x 集成
 
-### 安装 ODBC Driver
-参考页面[KAP ODBC 驱动程序教程](../driver/odbc.cn.html)KAP ODBC Driver __v1.5__。如果你安装有早前版本，请卸载后再安装。 
+### 安装 Kyligence ODBC 驱动程序
+
+有关安装信息，参考页面 [Kyligence ODBC 驱动程序教程](../driver/kyligence-odbc.cn.md)。
 
 ### 连接 KAP Server
 在Tableau 10.1创建新的数据连接，单击左侧面板中的`其他数据库(ODBC)`，并在弹出窗口中选择`KylinODBCDriver` 
@@ -9,16 +10,15 @@
 
 ![](images/tableau_10/step1.PNG)
 
-![](images/tableau_10/step2.PNG)
-
-
+![](images/tableau_10/step2-2.PNG)
 
 输入你的服务器地址、端口、项目、用户名和密码，点击`Connect`可获取有权限访问的所有项目列表。
 
 
-![](images/tableau_10/step3.PNG)
+![](images/tableau_10/kyligence_odbc_03_cn.PNG)
 
 ### 映射数据模型
+
 在左侧的列表中，选择数据库`defaultCatalog`并单击”搜索“按钮，将列出所有可查询的表。用鼠标把表拖拽到右侧区域，就可以添加表作为数据源，并创建好表与表的连接关系（映射信息如图）。
 
 **注意：Tableau 会发送查询"select \* from fact\_table"，如果被查询表格数据量太大，Tableau可能需要等待很长时间拿到返回结果。请参见[配置](../config/basic_settings.cn.md#kylinqueryforce-limit)对KAP进行配置绕过该问题。**

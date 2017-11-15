@@ -1,4 +1,4 @@
-## Power BI Desktop 集成
+## 与 Power BI Desktop 集成
 
 Microsoft Power BI Desktop 是由微软推出的一款商业智能的专业分析工具，为用户提供简单而丰富的数据可视化及分析功能。
 

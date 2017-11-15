@@ -1,20 +1,18 @@
 ## Integration with Tableau 10.x
 
-### Install ODBC Driver
-Refer to this guide: [Kylin ODBC Driver Tutorial](../driver/odbc.en.md).
+### Install Kyligence ODBC Driver
 
-Please make sure to download and install Kylin ODBC Driver v1.5. If you already installed ODBC Driver in your system, please uninstall it first.  
+For the installation information, please refer to [Kyligence ODBC Driver tutorial](../driver/kyligence-odbc.en.md).
 
 ### Connect to Kylin Server
 Connect Using Driver: Start Tableau 10.1 desktop, click `Other Database(ODBC)` in the left panel and choose KylinODBCDriver in the pop-up window. 
 
 
-![](images/tableau_9/1.png)
+![](images/tableau_10/1.png)
 
-Provide your Sever location, credentials and project. Clicking `Connect` button, you can get the list of projects that you have permission to access, see details at [Kylin Cube Permission Grant Tutorial](../security/acl.en.md).
+Click `Connect` button and input the server information, then click `ok`.
 
-
-![](images/tableau_10/step3.PNG)
+![](images/tableau_10/2.png)
 
 ### Mapping Data Model
 In left panel, select `defaultCatalog` as Database, click `Search` button in Table search box, and all tables get listed. Drag the table to right side, then you can add this table as your data source and edit relation between tables(mapping information is shown in figure).

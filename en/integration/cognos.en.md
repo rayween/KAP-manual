@@ -1,18 +1,10 @@
 ## Integration with Cognos 10.X
 
-### Install ODBC Driver
+### Install Kyligence ODBC Driver
 
-Refer to this guide: [Kylin ODBC Driver Tutorial](../driver/odbc.en.md).
+Please refer to this guide [Kylin ODBC Driver Tutorial](../driver/kyligence-odbc.en.md) for installation.
 
-Please make sure to download and install Kylin ODBC Driver v1.6 64 bit or above. If you already installed Kylin ODBC Driver in your system, please uninstall it first.  
-
-The Kylin ODBC driver needs to be installed in the machine or virtual environment where your Cognos Server is installed.
-
-### Create Local DSN
-
-Open your window ODBC Data Source Administrator and create a system DSN that point to your KAP instance.
-
-![](images/cognos/0.png)
+The Kyligence ODBC driver needs to be installed in the machine or virtual environment where your Cognos Server is installed.
 
 ### Create a Data Source in Cognos
 

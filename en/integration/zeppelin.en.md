@@ -1,9 +1,9 @@
 ## Apache Zepplin Integration
 
-Apache Zeppelin, an open source data analysis platform, is a top program of Apache； its back-end has multiple components to support a variety of data processing engine, such as Spark, Flink, Lens and so on; and provide notebook type UI to process visualization related operations. KAP has developed  corresponding Zeppelin modules and merged them with Zeppelin's major branches.  Correspondingly KAP is accessible with Zeppelin 0.5.6 and subsequent version.
+Apache Zeppelin, an open source data analysis platform, is a top program of Apache; its back-end has multiple components to support a variety of data processing engine, such as Spark, Flink, Lens and so on; and provide notebook type UI to process visualization related operations. KAP has developed  corresponding Zeppelin modules and merged them with Zeppelin's major branches.  Correspondingly KAP is accessible with Zeppelin 0.5.6 and subsequent version.
 
 ### Zeppelin Architecture Introduction
-As the following diagram shows, Zeppelin client is capable to interact  with servers through both HTTP Rest and Websocket. On the servers, Interpreter is supported by Zeppelin. For Kylin, users only need to develop Kylin-Interpreter and enable it integrate with Zeppelin, then users can correspond with Kylin server via Zeppelin's client, and visit related data on Kylin.
+As the following diagram shows, Zeppelin client is capable to interact  with servers through both HTTP Rest and Websocket. On the servers, Interpreter is supported by Zeppelin. For Kylin, users only need to develop Kylin-Interpreter and enable it to integrate with Zeppelin, then users can correspond with Kylin server via Zeppelin's client, and visit related data on Kylin.
 
 ![](images/zeppelin/zeppelin_arc.png)
 

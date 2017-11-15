@@ -2,22 +2,11 @@
 
 Qlik Sense 是新一代自助式数据可视化工具。它是一款完整的商业分析软件，便于开发人员和分析人员快速构建和部署强大的分析应用。近年来，该工具成为全球增长率最快的 BI 产品。它可以与 Hadoop Database（Hive 和 Impala）集成。现在也可与 KAP 集成。本文将分步指导您完成 KAP 与 Qlik Sense 的连接。
 
-### 前提条件
+### 安装 Kyligence ODBC 驱动程序
 
-在与 Qlik Sense 集成之前，务必先安装并下载下列应用程序。如果您的机器上已经安装 Kylin ODBC 驱动程序，请先将它卸载。
+有关安装信息，参考页面 [Kyligence ODBC 驱动程序教程](../driver/kyligence-odbc.cn.md)。
 
-- [Kylin ODBC](http://kylin.apache.org/docs15/tutorial/odbc.html)
-- [Qlik Sense Desktop](http://www.qlik.com/us/try-or-buy/download-qlikview)
-
-详细安装和配置说明见下。
-
-#### 配置本地 DSN
-
-参阅 [ODBC 驱动程序](http://docs.kyligence.io/v2.5/en/driver/odbc.en.html)页面上的说明，安装和配置本地 DSN。执行完该页面上的步骤后，系统将弹出对话框  **Apache Kylin DSN Configuration**，选择 **learn_kylin** 项目，然后单击 **Done**。
-
-![图 1. Apache Kylin DSN 配置](images/qlik/apache_kylin_dsn_configuration.png)
-
-#### 安装 Qlik Sense
+### 安装 Qlik Sense
 
 有关 Olik Sense 的安装说明，请访问 [Qlik Sense Desktop 下载页面](https://www.qlik.com/us/try-or-buy/download-qlik-sense)。
 
