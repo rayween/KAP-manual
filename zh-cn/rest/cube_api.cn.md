@@ -12,6 +12,7 @@
 * [返回数据模型](#返回数据模型)
 * [构建 Cube-日期分区](#构建cube-日期分区)
 * [构建 Cube-非日期分区](#构建cube-非日期分区)
+* [构建Cube-无分区](#构建cube-无分区)
 * [克隆 Cube](#克隆cube)
 * [启用 Cube](#启用cube)
 * [禁用 Cube](#禁用cube)
@@ -554,6 +555,24 @@
 * buildType - `必选` `string` 支持的计算类型: 'BUILD'
 * mpValues - `可选` `string` 对应model的more partition 字段值
 
+
+### 构建Cube-无分区
+
+`请求方式 PUT`
+
+`访问路径 <http://host:port/kylin/api/cubes/{cubeName}/rebuild`>
+
+`Content-Type: application/vnd.apache.kylin-v2+json`
+
+#### 路径变量
+
+* cubeName - `必选` `string` Cube 名称
+
+#### 请求主体
+
+* startTime - `必选` `long` , 0
+* endTime - `必选` `long`, 0
+* buildType - `必选` `string`, 支持的计算类型: 'BUILD'
 
 ### 克隆Cube
 `请求方式 PUT`

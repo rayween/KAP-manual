@@ -11,6 +11,7 @@
 * [Get Data Model](#get-data-model)
 * [Build Cube - Date Partition](#build-cube-date-partition)
 * [Build Cube - Non Date Partition](#build-cube-non-date-partition)
+* [Build Cube - No Partition](#build-cube-no-partition)
 * [Clone Cube](#clone-cube)
 * [Enable Cube](#enable-cube)
 * [Disable Cube](#disable-cube)
@@ -554,6 +555,26 @@ fact tables, dimension tables and etc.
 - sourceOffsetEnd - `required` `long`, end value
 - buildType - `required` `string`, supported computing type: 'BUILD'
 - mpValues - `optional` `string`, the value of more partition field for the corresponding model
+
+Build Cube - No Partition
+
+### Build Cube - No Partition
+
+` Request Mode PUT`
+
+`Access Path <http://host:port/kylin/api/cubes/{cubeName}/rebuild`>
+
+`Content-Type: application/vnd.apache.kylin-v2+json`
+
+#### Path Variable
+
+- cubeName - `required` `string` Cube's name
+
+#### Request Body
+
+- startTime - `required` `long` , 0
+- endTime - `required` `long`,  0
+- buildType - `required` `string`, supported computing type: 'BUILD'
 
 ### Clone Cube
 
