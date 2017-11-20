@@ -32,7 +32,6 @@ The following recommended configurations are classified according to the size of
 | kylin.storage.hbase.coprocessor-mem-gb   | 3          | 3          |
 | kylin.job.max-concurrent-jobs            | 10         | 20         |
 | kylin.job.sampling-percentage            | 100        | 100        |
-| kylin.job.step.timeout                   | 7200       | 7200       |
 | kylin.engine.mr.yarn-check-interval-seconds | 10         | 10         |
 | kylin.engine.mr.reduce-input-mb          | 100        | 500        |
 | kylin.engine.mr.max-reducer-number       | 100        | 500        |
