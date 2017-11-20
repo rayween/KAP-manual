@@ -23,11 +23,11 @@ Follow below steps to grant access at table-level:
 7. (Optional) Click on `+` to add another column to filter. 
 8. Save
 
-![](images/row/1.png)
+![](images/row/row_en1.png)
 
-![](images/row/2.png)
+![](images/row/row_en2.png)
 
-The row-level restriction will transform into a where clause that append on user's query. If there are multiple value filtered for the same column, the logical operator between these values are `AND`.  you may also set multiple row-level restriction at the same time for a user,the logical operator between row-level restriction on two columns will be `OR`.
+The row-level restriction will transform into a where clause that append on user's query. If there are multiple value filtered for the same column, the logical operator between these values are `OR`.  you may also set multiple row-level restriction at the same time for a user,the logical operator between row-level restriction on two columns will be `AND`.
 
 ![](images/row/3.png)
 

@@ -109,6 +109,7 @@
     * [缓存 API](rest/cache_api.cn.md)
 * [安全控制](security/README.md)
     * [管理用户](security/user.cn.md)
+    * [管理用户组](security/group.cn.md)
     * [集成LDAP登录](security/ldap.cn.md)
     * [管理权限](security/acl.cn.md)
     * [管理数据访问](security/data_access_control.cn.md)
