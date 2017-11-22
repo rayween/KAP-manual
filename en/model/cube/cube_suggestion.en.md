@@ -1,24 +1,24 @@
 ## Cube Optimizer
 
-Start from v2.5, KAP provides a ***multi-preference based Cube Optimizer*** to suggest cube designs, which helps reduce cube expansion and improve ***Query/Build*** performance.
+Start from V2.5, KAP provides a ***multi-preference based Cube Optimizer*** to suggest cube designs, which helps reduce cube expansion and improve ***Query/Build*** performance.
 
 ### Introduction
 
-According to best pratices of Cube tuning, Optimizer analyzes statistics of source data and SQL patterns, and suggests a optimized Cube design, which includes:
+According to the best pratices of Cube tuning, Optimizer analyzes statistics of source data and SQL patterns, and suggests a optimized Cube design, which includes:
 
-- ***Preference***: 
+- ***Optimization Strategy***: 
 
-  - Data oriented: Optimizer would mainly digest source data feature to suggest one aggregate group, which optimizes all dimensions from model. Cubes follow data-oriented preference are suit to serve flexible queries.
+  - Data Oriented: Optimizer would mainly digest source data feature to suggest one aggregate group, which optimizes all dimensions from a model. Cubes which follows data-oriented strategy are suitable to serve flexible queries.
 
-    ![](images/Cube_optimizer/EN_data_oriented.png)
+    ![Data Oriented](images/Cube_optimizer/updated_en_2.png)
 
-  - Business oriented: Optimizer would only digest SQL patterns to suggest multiple aggregate groups consisting of mandatory dimensions. Cubes follow business-oriented preference are designed to answer known queries.
+  - Business Oriented: Optimizer would only digest SQL patterns input in **Optimizer Inputs** to suggest multiple aggregate groups consisting of mandatory dimensions. Cubes which follows business-oriented strategy are designed to answer known queries.
 
-    ![](images/Cube_optimizer/EN_buz_oriented.png)
+    ![Business Oriented](images/Cube_optimizer/updated_en_3.png)
 
-  - Mix: Optimizer would combine two preference to serve queries, which contains some flexible queries and some known queries. The mix will cost more time and resource on build cube to meet satisfy two scenarios.
+  - Default: If you do not specify any strategy, KAP will suggest the aggregation groups and Rowkeys based on the contents in **Optimizer Inputs**.
 
-    ![](images/Cube_optimizer/EN_mix.png)
+    ![Default](images/Cube_optimizer/updated_en_1.png)
 
 - ***Dimensions***: dimension and the type of dimension, such as ***Normal*** or ***Derived.***
 - ***Measures***: suggest common aggregation mostly in entered SQL patterns as measures.
