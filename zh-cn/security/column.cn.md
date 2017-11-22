@@ -26,7 +26,7 @@
 
 ![列级权限](images/column/column1_cn.png)
 
-![约束权限](images/column/column2_cn.png)
+![添加约束](images/column/column2_cn.png)
 
 #### 修改约束
 

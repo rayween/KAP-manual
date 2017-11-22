@@ -40,20 +40,20 @@
 
 用户组创建后，系统管理员可以在`系统->组`页面对用户进行管理，可以添加、删除用户组，修改用户所在组，以及为组分配用户并赋予权限。
 
-![](images/group/group_cn1.png)
+![用户组页面](images/group/group_cn1.png)
 
 #### 创建用户组
 
 在`系统->组`管理页面，系统管理员可以点击`+组`按钮来添加新组。在添加新用户弹出窗口中，输入组名，按`保存`。
 
-![](images/group/group_cn2.png)
+![创建用户组](images/group/group_cn2.png)
 
 #### 为组分配用户
 在`系统->组`管理页面，选择要向其分配用户的组，点击右侧`操作`下的`…`，，选择`分配用户`。
 
 在弹出窗口的`未分配的用户`中勾选需要要分配的用户，点击向右箭头，该用户将进入`已分配组用户`。
 
-![](images/group/group_cn3.png)
+![为组分配用户](images/group/group_cn3.png)
 
 #### 修改用户所在组
 参见本章[管理用户](security/user.cn.md)。
@@ -62,3 +62,10 @@
 
 参见本章[管理访问权限](security/acl.cn.md)。
 
+### 启用 LDAP 后的用户组管理
+
+在启用 LDAP 后，用户组只能为只读，不可添加、编辑、删除、修改用户组或为用户组分配用户。
+
+![启用 LDAP 后的用户组管理](images/group/group_cn4.png)
+
+有关 LDAP 的更多信息，参见本章 [LDAP 验证](security/ldap.cn.md)。
