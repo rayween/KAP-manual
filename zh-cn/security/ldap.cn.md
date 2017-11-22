@@ -201,10 +201,19 @@ kylin.security.ldap.connection-password=${crypted_password}
 其次，提供检索用户信息的模式, 例如从某个节点开始查询，需要满足哪些条件等。下面是一个例子，供参考:
 
 ```properties
-# LDAP user account directory
+# 定义同步到KAP的用户的范围
 kylin.security.ldap.user-search-base=ou=People,dc=example,dc=com
+#定义登陆验证匹配的用户名
 kylin.security.ldap.user-search-pattern=(&(cn={0}))
+#定义同步到KAP的用户组的范围
 kylin.security.ldap.user-group-search-base=ou=Groups,dc=example,dc=com
+
+#定义同步到KAP的用户的类型
+kylin.security.ldap.user-search-filter=(objectClass=person)
+#定义同步到KAP的用户组的类型
+kylin.security.ldap.group-search-filter=(|(objectClass=groupOfNames)(objectClass=group))
+#定义同步到用户组下的用户
+kylin.security.ldap.group-member-search-filter=(&(cn={0})(objectClass=groupOfNames))
 ```
 
 如果您需要服务账户（供系统集成）可以访问KAP，那么依照上面的例子配置`ldap.service.*`，否则请将它们留空。
@@ -236,6 +245,8 @@ kylin.security.acl.default-role=ROLE_ANALYST,ROLE_MODELER
 当使用 `itpeople` 组的 johnny 登录时，因为该组并不是`管理员`组，则不会显示 `系统` 菜单项。
 
 ![使用普通用户组的用户登录](images/ldap/ldap_2.cn.png)
+
+在启用 LDAP 后，用户和用户组只能为只读，不可添加、编辑、删除、修改用户组或为用户组分配用户。
 
 ### LDAP用户信息缓存
 
