@@ -3,18 +3,18 @@
 KAP 支持与 LDAP 服务器集成完成用户验证。这种验证是通过 Spring Security 框架实现的，所以具有良好的通用性。在启用 LDAP 验证之前，建议您联系 LDAP 管理员，以获取必要的信息。
 
 ### LDAP 服务器的安装
-启用 LDAP 验证之前，需要一个运行的LDAP服务。如果已经有，联系LDAP管理员，以获取必要的信息，如服务器连接信息、人员和组织结构等。
+启用 LDAP 验证之前，需要一个运行的 LDAP 服务器。如果已经有，联系 LDAP 管理员，以获取必要的信息，如服务器连接信息、人员和组织结构等。
 
-如果没有可用的LDAP服务器，需要额外安装。推荐使用OpenLDAP Server 2.4，它是一个开源的实现（基于OpenLDAP Public License）并且也是最流行的LDAP服务器之一。很多企业Linux发行版已经内置了OpenLDAP服务，如果没有可以从官网下载： http://www.openldap.org/
+如果没有可用的 LDAP 服务器，需要额外安装。推荐使用 OpenLDAP Server 2.4，它是一个开源的实现（基于 OpenLDAP Public License）并且也是最流行的 LDAP 服务器之一。很多企业 Linux 发行版已经内置了 OpenLDAP 服务器，如果没有，可以从官网下载： http://www.openldap.org/。
 
-OpenLDAP服务器的安装，依系统不同而略有区别。这里以CentOS 6.4为例介绍:  
+OpenLDAP 服务器的安装，依系统不同而略有区别。这里以 CentOS 6.4 为例进行介绍:  
 
 * 安装之前检查
 
 ```shell
 find / -name openldap*
 ```
-如果没有安装，使用yum安装：
+如果没有安装，使用 yum 安装：
 ```shell
 sudo yum install -y openldap openldap-servers openldap-clients
 ```
@@ -27,7 +27,7 @@ cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
 mv /etc/openldap/slapd.d{,.bak}
 ```
 
-* 修改slapd.conf，以给example.com公司配置为例，步骤如下：
+* 修改 slapd.conf，以给 example.com 公司配置为例，步骤如下：
 
 1．设置目录树的后缀
 
@@ -39,7 +39,7 @@ suffix "dc=my-domain,dc=com"
 ```
 suffix "dc=example,dc=com"
 ```
-2．该语句设置LDAP管理员的DN
+2．该语句设置 LDAP 管理员的 DN
 
 找到语句：
 ```
@@ -49,7 +49,7 @@ rootdn "cn=Manager,dc=my-domain,dc=com"
 ```
 rootdn "cn=Manager,dc=example,dc=com"
 ```
-3．设置LDAP管理员的口令
+3．设置 LDAP 管理员的口令
 
 找到语句：
 ```
@@ -60,7 +60,7 @@ rootpw secret
 ```
 slappasswd
 ```
-输入要设置的密码，加密值会被输出在shell界面。然后将此值拷贝在rootpw这一行，如：
+输入要设置的密码，加密值会被输出在 shell 界面。然后将此值拷贝在 rootpw 这一行，如：
 ```
 rootpw {SSHA}vv2y+i6V6esazrIv70xSSnNAJE18bb2u
 ```
@@ -71,7 +71,7 @@ chown ldap.ldap /etc/openldap/*
 chown ldap.ldap /var/lib/ldap/*
 ```
 
-5．新建目录/etc/openldap/cacerts
+5．新建目录 /etc/openldap/cacerts
 ```shell
 mkdir /etc/openldap/cacerts
 ```
@@ -178,14 +178,14 @@ ldappasswd -xWD cn=Manager,dc=example,dc=com -S cn=jenny,ou=People,dc=example,dc
 ```
 
 
-### 在KAP中配置LDAP服务器信息
+### 在 KAP 中配置 LDAP 服务器的信息
 
-首先，在conf/kylin.properties中，配置LDAP服务器的URL, 必要的用户名和密码（如果LDAP Server不是匿名访问）。为安全起见，这里的密码是需要加密（加密算法AES），您可以运行下面的命令来获得加密后的密码：
+首先，在 conf/kylin.properties 中，配置 LDAP 服务器的 URL, 必要的用户名和密码（如果 LDAP Server 不是匿名访问）。为安全起见，这里的密码是需要加密（加密算法 AES），您可以运行下面的命令来获得加密后的密码：
 ```shell
 ${KYLIN_HOME}/bin/kylin.sh io.kyligence.kap.tool.general.CryptTool AES *your_password*
 # ${crypted_password}
 ```
-> 然后填写在kylin.properties中(*请注意此处“=”后所指的用户名、服务器、密码都不需要用双引号*)，如下：
+> 然后填写在 kylin.properties 中(*请注意此处“=”后所指的用户名、服务器、密码都不需要用双引号*)，如下：
 >
 
 ```properties
@@ -201,22 +201,22 @@ kylin.security.ldap.connection-password=${crypted_password}
 其次，提供检索用户信息的模式, 例如从某个节点开始查询，需要满足哪些条件等。下面是一个例子，供参考:
 
 ```properties
-# 定义同步到KAP的用户的范围
+# 定义同步到 KAP 的用户的范围
 kylin.security.ldap.user-search-base=ou=People,dc=example,dc=com
-#定义登陆验证匹配的用户名
+#定义登录验证匹配的用户名
 kylin.security.ldap.user-search-pattern=(&(cn={0}))
-#定义同步到KAP的用户组的范围
+#定义同步到 KAP 的用户组的范围
 kylin.security.ldap.user-group-search-base=ou=Groups,dc=example,dc=com
 
-#定义同步到KAP的用户的类型
+#定义同步到 KAP 的用户的类型
 kylin.security.ldap.user-search-filter=(objectClass=person)
-#定义同步到KAP的用户组的类型
+#定义同步到 KAP 的用户组的类型
 kylin.security.ldap.group-search-filter=(|(objectClass=groupOfNames)(objectClass=group))
 #定义同步到用户组下的用户
 kylin.security.ldap.group-member-search-filter=(&(cn={0})(objectClass=groupOfNames))
 ```
 
-如果您需要服务账户（供系统集成）可以访问KAP，那么依照上面的例子配置`ldap.service.*`，否则请将它们留空。
+如果您需要服务账户（供系统集成）可以访问 KAP，那么依照上面的例子配置`ldap.service.*`，否则请将它们留空。
 ```properties
 # LDAP service account directory
 kylin.security.ldap.service-search-base=ou=People,dc=example,dc=com
@@ -226,7 +226,7 @@ kylin.security.ldap.service-group-search-base=ou=Groups,dc=example,dc=com
 
 ### 配置管理员群组和默认角色
 
-KAP允许您将一个LDAP群组映射成管理员角色：在kylin.properties中，将"acl.adminRole"设置为"ROLE_" + GROUP_NAME形式. 在当前例子中，在LDAP中使用群组"ADMIN"来管理所有KAP管理员，那么这里应该设置为:
+在 KAP 中，可将一个 LDAP 群组映射成管理员角色：在 kylin.properties 中，将"acl.adminRole"设置为"ROLE_" + GROUP_NAME 形式. 在当前例子中，在 LDAP 中使用群组"ADMIN"来管理所有 KAP 管理员，那么这里应该设置为:
 
 ```properties
 kylin.security.acl.admin-role=ROLE_ADMIN
@@ -235,9 +235,9 @@ kylin.security.acl.default-role=ROLE_ANALYST,ROLE_MODELER
 
 属性"acl.defaultRole"定义了赋予登录用户的权限，默认是分析师（ANALYST）和建模人员（MODELER）.
 
-### 启用LDAP
+### 启用 LDAP
 
-在conf/kylin.properties中，设置"kylin.security.profile=ldap"，然后重启KAP。
+在 conf/kylin.properties 中，设置"kylin.security.profile=ldap"，然后重启 KAP。
 
 当使用 `admin` 组的 jenny 用户登录时，会显示 `系统` 菜单项。
 ![使用管理员组的用户登录](images/ldap/ldap_1.cn.png)
@@ -248,9 +248,9 @@ kylin.security.acl.default-role=ROLE_ANALYST,ROLE_MODELER
 
 在启用 LDAP 后，用户和用户组只能为只读，不可添加、编辑、删除、修改用户组或为用户组分配用户。
 
-### LDAP用户信息缓存
+### LDAP 用户信息缓存
 
-用户通过LDAP验证登录KAP后，其信息会被KAP缓存以减轻访问LDAP服务器的开销。用户可以在kylin.properties中对用户信息缓存时间（秒）和最大缓存用户数目进行配置，默认值如下：
+用户通过 LDAP 验证登录 KAP 后，其信息会被 KAP 缓存以减轻访问 LDAP 服务器的开销。用户可以在 kylin.properties 中对用户信息缓存时间（秒）和最大缓存用户数目进行配置，默认值如下：
 
 ```properties
 kylin.server.auth-user-cache.expire-seconds=300
