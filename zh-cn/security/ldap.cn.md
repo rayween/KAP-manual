@@ -12,7 +12,7 @@ OpenLDAP 服务器的安装，依系统不同而略有区别。这里以 CentOS 
 * 安装之前检查
 
 ```shell
-find / -name openldap*
+sudo find / -name openldap*
 ```
 如果没有安装，使用 yum 安装：
 ```shell
@@ -27,7 +27,7 @@ cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
 mv /etc/openldap/slapd.d{,.bak}
 ```
 
-* 修改 slapd.conf，以给 example.com 公司配置为例，步骤如下：
+修改 slapd.conf，以给 example.com 公司配置为例，步骤如下：
 
 1．设置目录树的后缀
 
@@ -201,7 +201,7 @@ kylin.security.ldap.connection-password=${crypted_password}
 其次，提供检索用户信息的模式, 例如从某个节点开始查询，需要满足哪些条件等。下面是一个例子，供参考:
 
 ```properties
-# 定义同步到 KAP 的用户的范围
+#定义同步到 KAP 的用户的范围
 kylin.security.ldap.user-search-base=ou=People,dc=example,dc=com
 #定义登录验证匹配的用户名
 kylin.security.ldap.user-search-pattern=(&(cn={0}))
@@ -230,7 +230,6 @@ kylin.security.ldap.service-group-search-base=ou=Groups,dc=example,dc=com
 
 ```properties
 kylin.security.acl.admin-role=ROLE_ADMIN
-kylin.security.acl.default-role=ROLE_ANALYST,ROLE_MODELER
 ```
 
 属性"acl.defaultRole"定义了赋予登录用户的权限，默认是分析师（ANALYST）和建模人员（MODELER）.

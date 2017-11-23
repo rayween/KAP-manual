@@ -1,6 +1,6 @@
 ## Manage Access Permission
 
-When a user uses KAP, whether a user can access a project and use some functionalities within the project is determined by project-level access control, there are four types of access permission role set at the project-level in KAP. They are *ADMIN*, *MANAGEMENT*, *OPERATION* and *QUERY*. Each role defines a list of functionality user may perform in KAP system. 
+When a user/group uses KAP, whether the user/group can access a project and use some functionalities within the project is determined by project-level access control, there are four types of access permission role set at the project-level in KAP. They are *ADMIN*, *MANAGEMENT*, *OPERATION* and *QUERY*. Each role defines a list of functions user/group may perform in KAP system. 
 
 - *QUERY*: designed to be used by analysts who only need access permission to query tables/cubes in the project.
 - *OPERATION*: designed to be used by operation team in a corporate/organization who need permission to maintain the Cube. OPERATION access permission includes QUERY.
@@ -11,7 +11,7 @@ Access permissions are independent between different projects.
 
 ###How Access Permission is Determined
 
-Once project-level access permission has been set for a user, access permission on data source, model and Cube will be inherited based on the access permission role defined on project-level. For detailed functionalities, each access permission role can have access to, see table below. 
+Once project-level access permission has been set for a user/group, access permission on data source, model and Cube will be inherited based on the access permission role defined on project-level. For detailed functionalities, each access permission role can have access to, see table below. 
 
 | Functionality                            | SYSTEM ADMIN | PROJECT ADMIN | MANAGEMENT | OPERATION | QUERY |
 | ---------------------------------------- | ------------ | ------------- | ---------- | --------- | ----- |
@@ -41,24 +41,26 @@ Once project-level access permission has been set for a user, access permission 
 | View Monitor  page                       | Yes          | Yes           | Yes        | Yes       | Yes   |
 | View System  page                        | Yes          | No            | No         | No        | No    |
 | Manage system                            | Yes          | No            | No         | No        | No    |
-| Manage user                              | Yes          | No            | No         | No        | No    |
+| Manage user/group                        | Yes          | No            | No         | No        | No    |
 
 
 
-Additionally, when Query Pushdown is enabled, QUERY access permission on a project allows users to issue push down queries on all tables in the project even though no cube could serve them. It's impossible if a user is not yet granted QUERY permission at project-level.
+Additionally, when Query Pushdown is enabled, QUERY access permission on a project allows users/groups to issue push down queries on all tables in the project even though no cube could serve them. It's impossible if a user/group is not yet granted QUERY permission at project-level.
 
 ### Manage Access Permission at Project-level
 
 #### Grant Access 
 
-![](images/acl/1.png)
+![Grant access](images/acl/1.png)
 
 Follow below steps to grant access at project-level: 
 
 1. Click on project icon on the right side of project list on the navigation bar.
 2. Expand a project on the project list.
-3. Click `Access` menu  and then click `+Grant` menu to grant a user access.
-4. Fill in a user name, access permission and click `save`. 
+3. Click `Access` menu  and then click `+Grant` menu to grant access for a user/group.
+4. Fill in a user name/group name, access permission and click `save`. 
+
+![Grant access for a user/group](images/acl/2.png)
 
 #### Modify Access
 
@@ -67,7 +69,7 @@ Follow below steps to modify access at project-level:
 1. Click on project icon on the right side of project list on the navigation bar.
 2. Expand a project on the project list.
 3. Click `Access` menu and click `Edit` 
-4. Modify user's access permission and click `save`. 
+4. Modify user/group's access permission and click `save`. 
 
 ####Revoke Access
 
@@ -75,9 +77,9 @@ Follow below steps to revoke access at project-level:
 
 1. Click on project icon on the right side of project list on the navigation bar.
 2. Expand a project on the project list.
-3. click `Access` menu, choose a user, and then click `Delete` .
+3. click `Access` menu, choose a user/group, and then click `Delete` .
 
-When user's project access permission has been revoked, all access permission on this project will be revoked/dropped subsequently, this may include table-level, row-level and column-level if there is any. 
+When user/group's project access permission has been revoked, all access permission on this project will be revoked/dropped subsequently, this may include table-level, row-level and column-level if there is any. 
 
 
 

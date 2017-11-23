@@ -1,13 +1,13 @@
 ## LDAP Authentication
 
-KAP supports integration with LDAP servers for user authentication. This validation is achieved through the Spring Security framework, so it has a good versatility.
+KAP supports integration with LDAP servers for user authentication. This validation is achieved through the Spring Security framework, so it has a good versatility. Before enabling LDAP authentication, please contact your LDAP administrator for required information.
 
 ### Setup LDAP server
 Before enabling LDAP authentication, you need an running LDAP service. If you already have it, contact the LDAP administrator to get the necessary information including connectivity inforamtion, organization structure, etc.
 
-If you don't have LDAP server, need install one for KAP. The recommended server tool is OpenLDAP Server 2.4, as it is an open source implementation (under OpenLDAP Public License) and is the most popular LDAP server. It has been packaged in some Linux distributions like Red Hat Enterprise Linux; it can also be downloaded from http://www.openldap.org/
+If you don't have LDAP server, you need install one for KAP. The recommended server tool is OpenLDAP Server 2.4, as it is an open source implementation (under OpenLDAP Public License) and is the most popular LDAP server. It has been packaged in some Linux distributions like Red Hat Enterprise Linux; it can also be downloaded from http://www.openldap.org/
 
-The installation may vary with different platform. You may need check different documents or tutorials like. Here we take CentOS 6.4 as an example:  
+The installation may vary with different platforms. You may need check different documents or tutorials. Here we take CentOS 6.4 as an example:  
 
 * Check installation
 ```shell
@@ -203,30 +203,39 @@ ${KYLIN_HOME}/bin/kylin.sh io.kyligence.kap.tool.general.CryptTool AES *your_pas
 Then fill in kylin.properties:
 
 ```properties
-# ldap.server=ldap://<your_ldap_host>:<port>
-# ldap.username=<your_user_name>
-# ldap.password=<your_password_hash>
+# kylin.security.ldap.connection-server=ldap://<your_ldap_host>:<port>
+# kylin.security.ldap.connection-username=<your_user_name>
+# kylin.security.ldap.connection-password=<your_password_hash>
 
-ldap.server=ldap://127.0.0.1:389
-ldap.username=cn=Manager,dc=example,dc=com
-ldap.password=${crypted_password}
+kylin.security.ldap.connection-server=ldap://127.0.0.1:389
+kylin.security.ldap.connection-username=cn=Manager,dc=example,dc=com
+kylin.security.ldap.connection-password=${crypted_password}
 ```
 
 Second, provide user retrieval pattern, such as starting organization unit, filtering conditions etc; The following is an example for reference:
 
 ```properties
-# LDAP user account directory
-ldap.user.searchBase=ou=People,dc=example,dc=com
-ldap.user.searchPattern=(&(cn={0}))
-ldap.user.groupSearchBase=ou=Groups,dc=example,dc=com
+#Define the range of user to sync to KAP
+kylin.security.ldap.user-search-base=ou=People,dc=example,dc=com
+#Define the user name to login and validate
+kylin.security.ldap.user-search-pattern=(&(cn={0}))
+#Define the range of user group to sync to KAP
+kylin.security.ldap.user-group-search-base=ou=Groups,dc=example,dc=com
+
+#Define the type of user to sync to KAP
+kylin.security.ldap.user-search-filter=(objectClass=person)
+#Define the type of user group to sync to KAP
+kylin.security.ldap.group-search-filter=(|(objectClass=groupOfNames)(objectClass=group))
+#Define users to sync to user group
+kylin.security.ldap.group-member-search-filter=(&(cn={0})(objectClass=groupOfNames))
 ```
 
 If you need service accounts (for system integration) to access KAP, follow the example above to configure `ldap.service. *`, Otherwise leave them blank.
 ```properties
 # LDAP service account directory
-ldap.service.searchBase=ou=People,dc=example,dc=com
-ldap.service.searchPattern=(&(cn={0}))
-ldap.service.groupSearchBase=ou=Groups,dc=example,dc=com
+kylin.security.ldap.service-search-base=ou=People,dc=example,dc=com
+kylin.security.ldap.service-search-pattern=(&(cn={0}))
+kylin.security.ldap.service-group-search-base=ou=Groups,dc=example,dc=com
 ```
 
 ### Configure Administrator Groups and Default Roles
@@ -234,8 +243,7 @@ ldap.service.groupSearchBase=ou=Groups,dc=example,dc=com
 KAP allows mapping an LDAP group to the administrator role: In kylin.properties, set "acl.adminRole" to "ROLE_" + GROUP_NAME (The GROUP_NAME need be in upper case). In this example, use the group "ADMIN" to manage all KAP administrators, then this property should be set to
 
 ```
-acl.adminRole=ROLE_ADMIN
-acl.defaultRole=ROLE_ANALYST,ROLE_MODELER
+kylin.security.acl.admin-role=ROLE_ADMIN
 ```
 
 The attribute "acl.defaultRole" defines the roles that granted to any logged-on user. By default be both Analyst and Modeler.
@@ -246,11 +254,13 @@ In conf/kylin.properties, set "kylin.security.profile=ldap"，and then restart K
 
 If we login with jenny which belongs to group `admin`, `System` menu will be displayed in the top bar:
 
-![](images/ldap/ldap_1.en.png)
+![Login as user in Admin group](images/ldap/ldap_1.en.png)
 
 Otherwise, if we login with johnny which belongs to group `itpeople`, `System` menu won't be displayed in the top bar since the group `itpoeple` isn't admin group.
 
-![](images/ldap/ldap_2.en.png)
+![Login as user in Normal User group](images/ldap/ldap_2.en.png)
+
+Once LDAP is enabled, the user/group is read-only and cannot be added, edited, dropped, modified or grouped.
 
 ### LDAP user information cache
 

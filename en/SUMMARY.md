@@ -108,6 +108,7 @@
     * [Cache API](rest/cache_api.en.md)
 * [Security Control](security/README.md)
     * [User Management](security/user.en.md)
+    * [User Group Management](security/group.en.md)
     * [Integrate with LDAP](security/ldap.en.md)
     * [Manage Access Permissions](security/acl.en.md)
     * [Manage Data Access](security/data_access_control.en.md)
