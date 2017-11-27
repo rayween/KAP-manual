@@ -1,0 +1,18 @@
+## License Application
+
+License is the precondition to use KAP. After installing and deploying KAP, you need apply for license to use KAP. There are KAP license, KAP Plus license and KyBot license in KAP products. Both KAP license and KAP Plus license include Evaluation License (Evaluation Period for each: Two months) and Official License. KyBot online service includes Basic, Standard and Professional Versions. The Professional Version provides more services and SLA support. The license of KAP and KAP Plus is different, so their application process varies a lttile. This article will introduce how to apply for KAP license and KAP Plus license.
+
+### Application Process
+
+To apply for KAP license and KAP Plus license, do the following: 
+
+1. Use your account to login to [Kyligence Account Center](http://account.kyligence.io/). If you do not have an account, please sign up first. If you already have an account, use you account to login.
+
+![Kyligence Account Center](images/license_1.en.png)
+
+2. After login, select the license of **KAP Plus** or **KAP** based on your requirement. If you apply for KAP Evaluation License, just click the corresponding **Download Evaluation License** link. If you apply for KAP Plus Evaluation License, fill in an application form first. When you are approved to use KAP Plus, you will received a notification email sent by the system. Then login  [Kyligence Account Center](http://account.kyligence.io/) again and click the corresponding  **Download Evaluation License** link.
+
+![License Application](images/license_2.en.png)
+
+3. When the evaluation period expires, if you still want to use KAP Plus of KAP, contact our sales person to buy the official license.
+
