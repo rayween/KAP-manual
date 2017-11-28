@@ -490,10 +490,8 @@
 * cubeName - `必选` `string` Cube 名称
 
 #### 请求主体
-* startTime - `必选` `long` 要计算的数据对应起始时间的时间戳，应为GMT0格式的
-  时间戳 , e.g. 1388563200000 for 2014-1-1
-* endTime - `必选` `long` 要计算的数据对应终止时间的时间戳，应为GMT0格式的
-  时间戳
+* startTime - `必选` `long` 要计算的数据对应起始时间的时间戳，应为GMT格式的时间戳 , e.g. 1388534400000 for 2014-01-01，可使用 https://www.epochconverter.com/ 网页进行转换。
+* endTime - `必选` `long` 要计算的数据对应终止时间的时间戳，应为GMT格式的时间戳
 * buildType - `必选` `string` 支持的计算类型: 'BUILD'
 * mpValues - `可选` `string` 对应model的more partition 字段值
 

@@ -490,8 +490,8 @@ fact tables, dimension tables and etc.
 * cubeName - `required` `string`, Cube's name.
 
 #### Request Mode
-* startTime - `required` `long`, the timestamp refers to start time corresponding to the data to be calculated, it should be a GMT0 form timestamp, e.g. 1388563200000 for 2014-1-1.
-* endTime - `required` `long`, the timestamp refers to end time corresponding to the data to be calculated, it should be a GMT0 form timestamp.
+* startTime - `required` `long`, the timestamp refers to start time corresponding to the data to be calculated, it should be a GMT form timestamp, e.g. 1388534400000 for 2014-01-01. You may visit https://www.epochconverter.com/ to convert.
+* endTime - `required` `long`, the timestamp refers to end time corresponding to the data to be calculated, it should be a GMT form timestamp.
 * buildType - `required` `string`, supported calculation types: 'BUILD'.
 * mpValues - `optional` `string`, the value of field "more partition" corresponding to model.
 
