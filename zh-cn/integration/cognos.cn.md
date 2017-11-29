@@ -10,23 +10,23 @@ Kyligence ODBC Driver需要安装在Cognos Server所在的服务器上。
 
 在安装完 Kyligence ODBC Driver 并配置好 DSN 后，打开一个已有Cognos项目或者创建一个新项目。在本例中我们将创建一个新项目。
 
+1. 创建新项目
+
 ![](images/cognos/1.png)
 
-然后使用`元数据向导`创建新`数据源`。
+2. 使用`元数据向导`创建新`数据源`。
 
 ![](images/cognos/2.png)
 
-在`新建数据源向导`第一步中输入数据源名称。
+3. 在`新建数据源向导`第一步中输入数据源名称。
 
 ![](images/cognos/3.png)
 
-下一步选择`ODBC`作为连接类型。在`隔离级别`中，选择`使用默认对象Gateway`。
+4. 选择`ODBC`作为连接类型。在`隔离级别`中，选择`使用默认对象Gateway`。
 
 ![](images/cognos/4.png)
 
-下一步在ODBC数据源中填入上一步创建的DSN的名称。
-
-勾选`Unicode ODBC`。在`登陆`项中勾选`无身份验证`。
+5. 在ODBC数据源中填入上一步创建的DSN的名称。勾选`Unicode ODBC`。在`登陆`项中勾选`无身份验证`。
 
 随后点击`测试连接`。
 
@@ -38,9 +38,35 @@ Kyligence ODBC Driver需要安装在Cognos Server所在的服务器上。
 
 ![](images/cognos/8.png)
 
-这样数据源就创建成功了。点击下一步你可以继续在`元数据向导`中测试表的连接。
+这样数据源就创建成功了。
+
+6. 点击`下一步`你可以继续在`元数据向导`中测试表的连接。
 
 ![](images/cognos/9.png)
+
+
+
+### Cognos 与 KAP 权限集成
+
+为了支持输入不同的用户名和密码，需要进行 Cognos 与 KAP 权限集成。本文在默认已经配置 Cognos 认证程序的基础上进行 KAP 与 Cognos 的 ODBC 用户集成，以自定义的 java 为样例来进行介绍。有关详细信息，请参考 Cognos sdk 对应的 AuthenticationProvider 文档。下图是以 java 程序为例子的典型 Cognos 外部认证空间：
+
+![](images/cognos/cognos_acl_1.png)
+
+在 Cognos 权限认证对应的数据库中，添加 KAP 的用户名和密码：
+
+![](images/cognos/cognos_acl_2.png)
+
+创建一个 Cognos 数据源，第一步至第四步与上面相同，在第五步中，选择`外部名称空间`：
+
+![](images/cognos/cognos_acl_3.png)
+
+
+
+点击测试连接后，可以看到测试成功的提示，这说明 Congos 通过 KAP 的 ODBC 已成功连接 KAP 的 server。
+
+![](images/cognos/cognos_acl_4.png)
+
+
 
 ### 测试连接
 
