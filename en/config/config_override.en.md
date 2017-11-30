@@ -4,15 +4,17 @@ Some of the configuration properties in `KAP_HOME/conf/` could be overridden thr
 
 ### Project level configuration overriding
 
-At the Project Management page, open the edit page for one of projects, user could add configuration properties, which would override property values in configuration files. As the figure below showed: 
+At the Project Management page, open the edit page for one of projects, user could add configuration properties, which would override property values in configuration files, as the figure below shown: 
 
-![override_project](images/override_project.jpg)
+![override_project](images/override_project.en.png)
+
+The configuration of kylin.query.force-limit can be overridden at project level.
 
 ### Cube level configuration overriding
 
-At the `Configuration Overwrites` phase in cube design, user could rewrite property values to override those in project level and configuration files. As the figure below showed: ![override](images/override.jpg)
+At the `Configuration Overwrites` phase in cube design, user could rewrite property values to override those in project level and configuration files, as the figure below shown: ![override](images/override_cube.en.png)
 
-
+The configuration of kylin.query.disable-cube-noagg-sql can be overridden at Cube level.
 
 ### Overriding properties in kylin.properties
 
@@ -58,8 +60,8 @@ KAP allows overriding kylin_job_conf.xml and kylin_job_conf_inmem.xml through KA
 
 kylin.job.mr.config.override.*key* = *value*
 
-**Attention: it's necessary to prefix the name of properties with *kylin.job.mr.config.override*.  **As the figure below showed: 
+**Attention: it's necessary to prefix the name of properties with *kylin.job.mr.config.override*,  **as the figure below shown: 
 
-![override_cube](images/override_cube.jpg)
+![override_cube](images/override.en.png)
 
 The red rectangle marked the prefix, while the blue rectangle marked the name of the property, with a "." used to concatenate them. 

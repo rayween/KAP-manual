@@ -4,7 +4,7 @@ After cube is created, it has to be built to serve queries. We will use KAP samp
 
 ### First Build
 
-Open KAP web UI, select *learn_kylin* project, go to the *Model* page, and find the cube list.
+Open KAP web UI, select *learn_kylin* project, go to the *Studio* page, and find the cube list.
 Step1: Find the *Kylin_Sales_Cube* cube, right click the **Action** button, and select **Build** in the drop-down menu.
 
 ![](images/buildcube_0.png)
@@ -21,7 +21,9 @@ After submission, go to the *Monitor* page, a list of running jobs will be displ
 
 ### Incremental Build
 
-After the first segment is built, we can build more segments incrementally to accommodate newly arrived data. First find the cube in the *Model* page, click the **Action** button and select **Build** in the drop-down menu. In the build dialog, confirm the start time is `2013-01-01 00:00:00`, which is the end date of last segment. To ensure continuity, a new segment always starts from the end of the last segment. Enter `2014-01-01 00:00:00` as the end of the new segment and submit the job.
+After the first segment is built, we can build more segments incrementally to accommodate newly arrived data. The time range of two segments cannot overlap.
+
+First find the cube in the *Studio* page, click the **Action** button and select **Build** in the drop-down menu. In the build dialog, confirm the start time is `2013-01-01 00:00:00`, which is the end date of last segment. To ensure continuity, a new segment always starts from the end of the last segment. Enter `2014-01-01 00:00:00` as the end of the new segment and submit the job.
 
 When build completes, go to cube detail page and check, there should be two segments under the cube.
 

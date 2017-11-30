@@ -2,7 +2,7 @@
 
 在创建好Cube之后，只有对Cube进行构建，才能利用它执行SQL查询。本文以KAP样例数据为例，介绍Cube构建的过程。
 ####	初次构建
-首先打开KAP的Web UI，并选择learn_kylin项目，然后跳转到模型页面，找到Cube列表。在Cube列表中找到**Kylin_Sales_Cube**。单击右侧的**Action**按钮，在弹出的菜单中选择“**构建**（build）”。
+首先打开KAP的Web UI，并选择learn_kylin项目，然后跳转到建模页面，找到Cube列表。在Cube列表中找到**Kylin_Sales_Cube**。单击右侧的**Action**按钮，在弹出的菜单中选择“**构建**（build）”。
 
 ![](images/buildcube_0.png)
 
@@ -17,8 +17,9 @@
 ![](images/buildcube_2.png)
 
 #### 增量构建
-在第一个Segment构建完成之后，我们开始构建第二个Segment。首先在Model页面的Cube列表中找到该Cube，单击右侧的**Action**按钮，然后选择“构建(Build)”，打开Cube构建确认对话框。
-在这个对话框中，首先确认起始时间（Start Date）是2013-01-01 00:00:00，因为这是上次构建的结束日期，为保障所构建数据的连续性，KAP自动将新一次构建的起始时间更新为上次构建的结束日期。同样的，在结束时间（End Date）里输入2014-01-01 00:00:00，然后单击Submit按钮，开始构建下一年的Segment。
+在第一个Segment构建完成之后，我们开始构建第二个Segment。两个 segment 构建的时间周期不能有交集。
+
+首先在建模页面的Cube列表中找到该Cube，单击右侧的**Action**按钮，然后选择“构建(Build)”，打开Cube构建确认对话框。在这个对话框中，首先确认起始时间（Start Date）是2013-01-01 00:00:00，因为这是上次构建的结束日期，为保障所构建数据的连续性，KAP自动将新一次构建的起始时间更新为上次构建的结束日期。同样的，在结束时间（End Date）里输入2014-01-01 00:00:00，然后单击Submit按钮，开始构建下一年的Segment。
 
 待构建完成，我们可以在Cube的存储页（Storage）中查看，发现Cube的两个Segment都已就绪。
 

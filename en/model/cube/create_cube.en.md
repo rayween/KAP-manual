@@ -1,6 +1,6 @@
-## Cube Design
+## Create Cube
 
-We need to define dimension combinations and measure types based on existing data model. This process is called Cube design. This article will introduce how to design a cube with sample data(learn_kylin).
+This article will introduce how to design a cube with sample data(learn_kylin).
 
 Open KAP Web UI, select project `learn_kylin` in project list located at upper left corner. Cube design is only accessible on `Cube` page.
 

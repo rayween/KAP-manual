@@ -86,7 +86,11 @@
 
 #### 关于维度表存储形式
 
+<<<<<<< HEAD
 如果要设置数据存储形式，可依次单击`概览`和`模型`，这样会显示所选的事实表和维度表。默认当维度表小于 300M 时，表以 snapshot 形式存储，以提高查询效率；当维度表大于 300M 时，系统通常不支持以 snapshot 形式存储，此时如果要以 snapshot 形式存储，可在 kylin.properties 中重写配置【】进行设置。
+=======
+如果要设置数据存储形式，可依次单击`概览`和`模型`，这样会显示所选的事实表和维度表。默认当维度表小于 300M 时，表以 snapshot 形式存储，以提高查询效率；当维度表大于 300M 时，KAP 通常不支持以 snapshot 形式存储。此时，如果要以 snapshot 形式存储较大维度表，可在 kylin.properties 中更改 snapshot存储的限制（具体调整请联系tech support: kybot.io）。
+>>>>>>> master
 
 ![维度表存储形式](images/model_design_update_cn_6.png)
 

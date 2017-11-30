@@ -1,6 +1,10 @@
-## Import Data
+## Import Hive Data Source
 
-Currently, Hive is the default input data source of KAP. In order to use the sample data, it needs to be imported as Hive tables. In the `bin` folder of KAP installation directory, there is an executable script, run it to import the sample data into Hive：```$KYLIN_HOME/bin/sample.sh``` Once the script is executed successfully, try some commands in Hive shell to confirm the tables are loaded.
+Currently, Hive is the default input data source of KAP. In order to use the sample data, it needs to be imported as Hive tables. In the `bin` folder of KAP installation directory, there is an executable script, run it to import the sample data into Hive：```$KYLIN_HOME/bin/sample.sh``` 
+
+> Tips: After sample.sh is run, it is necessary to click **Reload Metadata** under the **System** page. Otherwise, errors will occur during data modeling. 
+
+Once the script is executed successfully, try some commands in Hive shell to confirm the tables are loaded.
 
 ```hive
 hive

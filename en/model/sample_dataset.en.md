@@ -15,7 +15,7 @@ KAP supports both star schema and snowflake data model since v2.4.0. At this art
 * DEFAULT.KYLIN_COUNTRY
   The country dimension table. Links to KYLIN_ACCOUNT.
 
-The five tables together constitute the structure of the entire star model. Below is a relational diagram of them.
+The five tables together constitute the structure of the entire snowflake data model. Below is a relational diagram of them.
 
 ![](images/dataset_1.png)
 

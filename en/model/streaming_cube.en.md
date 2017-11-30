@@ -2,72 +2,9 @@
 
 KAP 2.3.x releases the scalable streaming cubing function, it leverages Hadoop to consume the data from Kafka to build the cube. This doc is a step by step tutorial, illustrating how to create and build a streaming cube.
 
-## Preparation
-To finish this tutorial, you need a Hadoop environment which has KAP 2.3 or above installed, and have Kafka be ready to use. In this tutorial, we use Hortonworks HDP 2.4 Sandbox VM as the Hadoop environment.
+For the information on Kafka data source import and definition of a table from streaming, please refer to [Import Kafka Data Source](kafka_import.en.md) under the section of Data Import.
 
-Environment variable *KAFKA_HOME* should be exported successfully before KAP starts.
-
-## Create sample Kafka topic and populate data
-
-Firstly, we need a Kafka topic for the incoming data. A sample topic "kylin_demo" will be created here:
-
-```shell
-curl -s http://mirrors.tuna.tsinghua.edu.cn/apache/kafka/0.10.1.0/kafka_2.10-0.10.1.0.tgz | tar -xz -C /usr/local/
-cd /usr/local/kafka_2.10-0.10.1.0/
-./bin/kafka-server-start.sh config/server.properties &
-bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 3 --topic kylindemo
-```
-
-
-Secondly, we need to put some sample data to this topic. KAP has an utility class which can do this. Assuming KAP is installed in ${KYLIN_HOME}
-
-```shell
-export KAFKA_HOME=/usr/local/kafka_2.10-0.10.1.0
-cd $KYLIN_HOME
-./bin/kylin.sh org.apache.kylin.source.kafka.util.KafkaSampleProducer --topic kylindemo --broker localhost:9092
-```
-
-
-This tool sends 100 records to Kafka per second. Please keep it running during this tutorial. You can check the sample messages by running kafka-console-consumer.sh 
-
-```shell
-cd $KAFKA_HOME
-bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kylindemo --from-beginning
-```
-
-
-## Define a table from streaming
-1. Start KAP server, login KAP web GUI, select or create a project. Click "Studio" -> "Data Source", then click the icon "Kafka".
-
-   ![](images/a.png)
-
-2.Input your broker info.
-   ![](images/b.png)
-
-
-3.Click √ to confirm your broker info, then click Get Cluster Info -> sandbox -> kylindemo, the kafka sample message would appear in the right box, click Convert.
-   ![](images/c.png)
-
-4.You need to give a logic table name for this streaming data source. The name will be used for SQL query later. Here please enter "KAFKA_TABLE_1" in the "Table Name" field.
-   ![](images/d.png)
-
-5.Review the table schema, make sure there is at least one column chosen as 'timestamp'.
-
-   ![](images/e.png)
-
-6.Set parser
-
-Parser Name: org.apache.kylin.source.kafka.TimedJsonStreamParser (default), you can also use customized parser
-
-Parser Timestamp Field: you are required to set a timestamp field for the parser. In this example, we use order_time
-
-ParserProperties: Properties of the parser should as least include the timestamp field. In this example, tsColName=order_time. You can further define customized properties.
-
-![](images/f.png)
-
-7.click 'submit'
-
-## Create data model
+### Create data model
 With the table defined in previous step, let's create the data model. This step is pretty same as creating a normal data model, but please notice:
 
 * For a streaming cube, it doesn't support joining with lookup tables. So when you define the data model, only select "DEFAULT.KAFKA_TABLE_1 " as the fact table, no lookup tables.
@@ -86,7 +23,7 @@ Select 'MINUTE_START' as partition column. Save the data model.
 ![](images/j.png)
 
 
-## Create cube
+### Create cube
 
 The streaming cube is almost the same as a normal cube. A couple of points need your attention here:
 
@@ -105,7 +42,7 @@ The streaming cube is almost the same as a normal cube. A couple of points need 
 Save the cube.
 
 
-## Run a build
+### Run a build
 
 You can trigger the build job from web GUI, by clicking “Actions” -> “Build”, or sending a request to KAP RESTful API with ‘curl’ command:
 
@@ -121,7 +58,7 @@ Enter the “Insight” page, compose a SQL to run, e.g.:
 
 	SELECT MINUTE_START, COUNT(*), SUM(AMOUNT), SUM(QTY) FROM KAFKA_TABLE_1 GROUP BY MINUTE_START ORDER BY MINUTE_START
 
-## Automate the build
+### Automate the build
 
 
 Once the first build and query got successfully, you can schedule incremental builds at a certain frequency. KAP records the offsets of each build; when receives a build request, it will start from the last end position, and then seeks the latest offsets from Kafka. You can invoke RESTful API with any scheduler tools like Linux crontab to build periodically:
@@ -130,7 +67,7 @@ Once the first build and query got successfully, you can schedule incremental bu
 
 Now you can find the cube is automatically built from streaming. And when the cube segments accumulate to a longer time range, KAP will automatically merge them into a larger segment.
 
-##Trouble shootings
+### Trouble shootings
 
 You may encounter the following error when run “kylin.sh”:
 

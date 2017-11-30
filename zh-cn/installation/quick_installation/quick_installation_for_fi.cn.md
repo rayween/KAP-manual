@@ -45,6 +45,7 @@ source /opt/hadoopclient/bigdata_env
    ```shell
    hdfs dfs -mkdir /kylin
    hdfs dfs -chown root /kylin
+   hdfs dfs -chmod 755 /tmp/hive-scratch
    hdfs dfs -mkdir /user/root
    hdfs dfs -chown root /user/root
    ```
@@ -57,11 +58,12 @@ source /opt/hadoopclient/bigdata_env
    su hdfs
    hdfs dfs -mkdir /kylin
    hdfs dfs -chown root /kylin
+   hdfs dfs -chmod 755 /tmp/hive-scratch
    hdfs dfs -mkdir /user/root
    hdfs dfs -chown root /user/root
    ```
 
-5. 请您将 Hive 客户端的`hivemetastore-site.xml`文件中的所有配置项拷贝至`hive-site.xml`文件中。
+5. 请您将 Hive 客户端的`hivemetastore-site.xml`文件中的所有配置项拷贝至`hive-site.xml`文件中(包括HCatalog里的配置)。
 
    **注意：对于 KAP Plus 2.4 及以上版本，还需要将`hive-site.xml`文件拷贝至`$KYLIN_HOME/spark/conf/`路径下。**
 

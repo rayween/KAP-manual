@@ -6,15 +6,17 @@
 
 在项目管理（Project Management）页面中打开某一项目的编辑页面，可以添加配置项，这些配置项将覆盖配置文件中的默认值。如图所示：
 
- ![override_project](images/override_project.jpg)
+ ![override_project](images/override_project.cn.png)
+
+kylin.query.force-limit 可在项目级别重写。
 
 ### Cube配置重写
 
 在cube设计的`配置覆盖`步骤中，可以添加配置项，这些配置项将覆盖project级别和配置文件中的默认值。如图所示：
 
- ![override](images/override.jpg)
+ ![override](images/override_cube.cn.png)
 
-
+kylin.query.disable-cube-noagg-sql 可在 Cube 级别重写。
 
 ### 覆盖kylin.properties中参数
 
@@ -68,6 +70,6 @@ kylin.job.mr.config.override.*key* = *value*
 
 **注意：需要在参数名之前加上前缀*kylin.job.mr.config.override* **。举例如图：
 
-![override_cube](images/override_cube.jpg)
+![override_cube](images/override.cn.png)
 
 其中红色矩形框内的部分为前缀，蓝色矩形框内的部分为参数名，二者之间用英文“.”连接。
