@@ -85,12 +85,7 @@ Finally, click the button `Submit`, and the data model is created.
 
 #### Lookup Table Storage
 
-<<<<<<< HEAD
-If you want to set the storage of lookup table, click ` Overview` and then click `Model`. The Lookup table and Fact table will appear. By default, when the size of lookup table is less than 300M, the table will be stored as snapshot, so as to improve the query efficiency; when it is greater than 300M,  KAP do not support to store it as snapshot. At this time, if you still want to make it available, you need to change the corresponding configuration in kylin.properties.【】
-=======
 If you want to set the storage of lookup table, click ` Overview` and then click `Model`. The Lookup table and Fact table will appear. By default, when the size of lookup table is less than 300M, the table will be stored as snapshot, so as to improve the query efficiency; when it is greater than 300M,  KAP do not support to store it as snapshot. At this time, if you still want to make it available, you need to change the corresponding configuration in kylin.properties(details refer to KAP tech support: kybot.io).
->>>>>>> master
-
 ![](images/model_design_update_en_6.png)
 
 
