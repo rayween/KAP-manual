@@ -48,7 +48,7 @@ Now you have the data source created.
 
 ### Cognos & KAP ACL Integration
 
-In order to enable to input different usernames and passwords, it is necessary to integrate the access permission of Cognos with KAP. This following will introduce how to integrate the access permission of Cognos with KAP by using a custom Java example, on the assumption that Cognos's authentication has been configured. For the details, please refer to the AuthenticationProvider document corresponding to Cognos SDK. The following figure is a typical Cognos external authentication space using Java example:
+In order to reflect KAP Access Control in Cognos, it is necessary to allow Cognos users to query KAP with their corresponding KAP credentials. This following will introduce how to integrate the access permission of Cognos with KAP by using a custom Java example, on the assumption that Cognos's authentication has been configured. For the details, please refer to the AuthenticationProvider document corresponding to Cognos SDK. The following figure is a typical Cognos external authentication space using Java example:
 
 ![](images/cognos/33.png)
 
