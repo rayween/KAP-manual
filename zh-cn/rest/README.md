@@ -18,3 +18,5 @@ KAP提供了全面的REST API，可以用来查询模型，触发构建任务，
 
 [缓存 API](cache_api.cn.md)
 
+[异步查询 API](async_query_api.cn.md)
+
