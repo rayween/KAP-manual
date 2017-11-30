@@ -48,7 +48,7 @@ Kyligence ODBC Driver需要安装在Cognos Server所在的服务器上。
 
 ### Cognos 与 KAP 权限集成
 
-为了支持输入不同的用户名和密码，需要进行 Cognos 与 KAP 权限集成。本文在默认已经配置 Cognos 认证程序的基础上进行 KAP 与 Cognos 的 ODBC 用户集成，以自定义的 java 为样例来进行介绍。有关详细信息，请参考 Cognos sdk 对应的 AuthenticationProvider 文档。下图是以 java 程序为例子的典型 Cognos 外部认证空间：
+为了支持输入不同的用户名和密码，需要进行 Cognos 与 KAP 权限集成。本文在默认已经配置 Cognos 认证程序的基础上进行 KAP 与 Cognos 的 ODBC 用户集成，以自定义的 Java 为样例来进行介绍。有关详细信息，请参考 Cognos SDK 对应的 AuthenticationProvider 文档。下图是以 Java 程序为例子的典型 Cognos 外部认证空间：
 
 ![](images/cognos/cognos_acl_1.png)
 
