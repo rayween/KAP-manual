@@ -63,7 +63,7 @@ source /opt/hadoopclient/bigdata_env
    hdfs dfs -chown root /user/root
    ```
 
-5. 请您将 Hive 客户端的`hivemetastore-site.xml`文件中的所有配置项拷贝至`hive-site.xml`文件中(包括HCatalog里的配置)。
+5. 请您将 Hive 客户端的`hivemetastore-site.xml`文件中的所有配置项拷贝至`hive-site.xml`文件中。
 
    **注意：对于 KAP Plus 2.4 及以上版本，还需要将`hive-site.xml`文件拷贝至`$KYLIN_HOME/spark/conf/`路径下。**
 
