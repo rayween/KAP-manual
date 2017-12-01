@@ -1,12 +1,10 @@
-# 高级SQL查询
+# 函数及运算符
 
-本章将介绍一些高级的SQL查询方法。
+本节介绍 KAP 中支持的函数及运算符。
 
 继续阅读：
 
-[窗口函数](window_function.cn.md)
+[运算符](operator.cn.md)
 
-[分组函数](grouping_sets.cn.md)
-
-[交集函数](intersect_count.cn.md)
+[函数](function.cn.md)
 
