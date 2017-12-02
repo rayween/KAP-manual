@@ -27,11 +27,11 @@ You may specify any name different from existing applications and then open this
 
 ![Select Script Editor](images/qlik/script_editor.png)
 
-The Kylinfortesting | Data Load Editor window shows. Click **Create New Connection** in the upper right of this page.
+The Data Load Editor window shows. Click **Create New Connection** in the upper right of this page.
 
 ![Create New Data Connection](images/qlik/create_data_connection.png)
 
-Select **ODBC -> kylin**, ignore the account information, and then click **Create**. 
+Select **DSN** you have created, ignore the account information, and then click **Create**. 
 
 ![ODBC Connection](images/qlik/odbc_connection.png)
 
@@ -41,29 +41,95 @@ Select **ODBC -> kylin**, ignore the account information, and then click **Creat
 `SET DateFormat='YYYY-MM-DD';`
 `SET TimestampFormat='YYYY-MM-DD h:mm:ss[.fff]';`
 
-5. Load columns from KAP to Qlik Sense:
+5. Configure Direct Query mode
 
-As we have logged in KAP and select the project **learn_kylin** during local DSN configuration, currently we only need to new a query **select * from KYLIN_SALES** in KAP.
+Given the Peta-byte scale Cube size in a usual production KAP environment, we recommend user to use Direct Query mode in Qlik Sense and avoid importing data into Qlik sense.
 
-![Query in KAP](images/qlik/kap_query.png)
+You may be able to enable Direct Query mode by typing `Direct Query` in front of your query script in Script editor.
 
-Export the query results and copy them to the script editor in Qlik Sense Desktop with comma as delimiter. 
+Below is the screenshot of such Direct Query script against *kylin_sales_cube* in *Learn_kylin* project. 
 
-![Script Running](images/qlik/script_run_result.png)
+![Script](images/qlik/script_run_result.png)
 
-In the running result, the line count shall be the same as in KAP. In this case, the line count is 10,000.
+Once you defined such script, Qlik sense can generate SQL based on this script for your report.
 
-![Script Running Result](images/qlik/load_data.png)
+It is recommended that you define Dimension and Measure corresponding to the Dimension and Measure in the Kylin Cube.  
 
-6. Load data to Qlik Sense:
+The whole script has been posted for your reference. 
 
-After the scripts run successfully, click **Load Data** in the upper right of the window Kylinfortesting | Data Load Editor. And then open **Data Manager**.
+You may also be able to utilize KAP built-in functions by creating a Native expression, for example: 
 
-![Open Data Manager](images/qlik/open_data_manager.png)
+`NATIVE('extract(month from PART_DT)') ` 
 
-Now Data manager opens. Click **Load Data** in the upper right of this page, and click **Edit worksheet** once data loaded.
+```sql
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$#,##0.00;-$#,##0.00';
+SET TimeFormat='h:mm:ss';
+SET DateFormat='YYYY/MM/DD';
+SET TimestampFormat='YYYY/MM/DD h:mm:ss[.fff]';
+SET FirstWeekDay=6;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-US';
+SET CreateSearchIndexOnReload=1;
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
 
-![Load Data in Data Manager](images/qlik/data_load2.png)
+LIB CONNECT TO 'KAP';
+
+
+DIRECT QUERY
+DIMENSION 
+  TRANS_ID,
+  YEAR_BEG_DT,
+  MONTH_BEG_DT,
+  WEEK_BEG_DT,
+  PART_DT,
+  LSTG_FORMAT_NAME,
+  OPS_USER_ID,
+  OPS_REGION,
+  NATIVE('extract(month from PART_DT)') AS PART_MONTH,
+   NATIVE('extract(year from PART_DT)') AS PART_YEAR,
+  META_CATEG_NAME,
+  CATEG_LVL2_NAME,
+  CATEG_LVL3_NAME,
+  ACCOUNT_BUYER_LEVEL,
+  NAME
+MEASURE
+	ITEM_COUNT,
+    PRICE,
+    SELLER_ID
+FROM KYLIN_SALES 
+join KYLIN_CATEGORY_GROUPINGS  
+on( SITE_ID=LSTG_SITE_ID 
+and KYLIN_SALES.LEAF_CATEG_ID=KYLIN_CATEGORY_GROUPINGS.LEAF_CATEG_ID)
+join KYLIN_CAL_DT
+on (KYLIN_CAL_DT.CAL_DT=KYLIN_SALES.PART_DT)
+join KYLIN_ACCOUNT 
+on (KYLIN_ACCOUNT.ACCOUNT_ID=KYLIN_SALES.BUYER_ID)
+JOIN KYLIN_COUNTRY
+on (KYLIN_COUNTRY.COUNTRY=KYLIN_ACCOUNT.ACCOUNT_COUNTRY)
+```
+
+Click **Load Data** on the upper right of the window, Qlik sense will send out inspection query to test the connection based on the script.
+
+![Load Data](images/qlik/load_data.png)
+
+6. Create a new report
+
+On the top left manu open **App Overview**.
+
+![Open App Overview](images/qlik/go_to_app_overview.png)
+
+ Click **Create new sheet** on this page.
+
+![Create new sheet](images/qlik/create_new_report.png)
 
 Select the charts you need, then add dimension and measurement based on your requirements. 
 
@@ -71,4 +137,8 @@ Select the charts you need, then add dimension and measurement based on your req
 
 You will get your worksheet and the connection is complete. Your KAP data shows in Qlik Sense now.
 
-![View KAP data in Qlik Sense](images/qlik/final.png)
+![View KAP data in Qlik Sense](images/qlik/report.png)
+
+Please note that if you want the report to hit on Cube, you need to create the measure eaxctly as those are defined in the Cube. For the case of *Kylin_sales_cube* in Learn_kylin project. We use sum(price) as an example. 
+
+![Create Measure that can hit on Cube](images/qlik/measure.png)
