@@ -16,11 +16,11 @@
 
 ![试用许可证申请](images/license_2.cn.png)
 
-3. 如果需要购买 KAP Plus 或 KAP 的正式许可证，可在试用 KAP Plus 或 KAP 的过程中，点击**帮助 -> 关于KAP**。
+3. 如果需要购买 KAP Plus 或 KAP 的正式许可证，需要提供**许可申请文件**。您可以在试用 KAP Plus 或 KAP 的过程中，点击**帮助 -> 关于KAP**。
 
 
 ![正式许可证申请 1](images/license_3.cn.png)
 
-然后点击**生成许可申请文件**，后续将有相关销售人员跟进申请。
+然后点击**生成许可申请文件**获取该文件。
 
 ![正式许可证申请 1](images/license_4.cn.png)
