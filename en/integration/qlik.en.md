@@ -43,7 +43,7 @@ Select **DSN** you have created, ignore the account information, and then click 
 
 5. Configure Direct Query mode
 
-Given the Peta-byte scale Cube size in a usual production KAP environment, we recommend user to use Direct Query mode in Qlik Sense and avoid importing data into Qlik sense.
+Given the Peta-byte scale Cube size in a usual KAP production environment, we recommend user to use Direct Query mode in Qlik Sense and avoid importing data into Qlik sense.
 
 You may be able to enable Direct Query mode by typing `Direct Query` in front of your query script in Script editor.
 
@@ -117,7 +117,7 @@ JOIN KYLIN_COUNTRY
 on (KYLIN_COUNTRY.COUNTRY=KYLIN_ACCOUNT.ACCOUNT_COUNTRY)
 ```
 
-Click **Load Data** on the upper right of the window, Qlik sense will send out inspection query to test the connection based on the script.
+Click **Load Data** on the upper right of the window, Qlik sense will then send out inspection query to test the connection based on the script.
 
 ![Load Data](images/qlik/load_data.png)
 
@@ -139,6 +139,6 @@ You will get your worksheet and the connection is complete. Your KAP data shows 
 
 ![View KAP data in Qlik Sense](images/qlik/report.png)
 
-Please note that if you want the report to hit on Cube, you need to create the measure eaxctly as those are defined in the Cube. For the case of *Kylin_sales_cube* in Learn_kylin project. We use sum(price) as an example. 
+Please note that if you want the report to hit on Cube, you need to create the measure exactly as those are defined in the Cube. For the case of *Kylin_sales_cube* in Learn_kylin project, we use sum(price) as an example. 
 
 ![Create Measure that can hit on Cube](images/qlik/measure.png)
