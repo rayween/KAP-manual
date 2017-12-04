@@ -14,11 +14,11 @@ To apply for KAP license and KAP Plus license, do the following:
 
 ![License Application](images/license_2.en.png)
 
-3. If you want to purchase **Official License** of KAP Plus or KAP, click **Help -> About KAP** in KAP Plus or KAP.    
+3. If you want to purchase **Official License** of KAP Plus or KAP, you need to provide **License Request File**. Click **Help -> About KAP** in KAP Plus or KAP.   
 
    ![License Application](images/license_3.en.png)
 
-   And then click **Generate License Request File**. The sales will follow your request in a couple of days.
+   And then click **Generate License Request File**. You will get the request file.
 
    ![License Application](images/license_4.en.png)
 
