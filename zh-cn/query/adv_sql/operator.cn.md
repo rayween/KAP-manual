@@ -36,12 +36,12 @@ KAP 支持以下运算符：
 
 ### 算术运算符
 
-| 运算符  | 描述   | 示例                   | 语法   |
-| ---- | ---- | -------------------- | ---- |
-| +    | 加号   | Cost+Profit          | A+B  |
-| -    | 减号   | Revenue- Cost        | A-B  |
-| *    | 称号   | Unit_Price* Quantity | A*B  |
-| /    | 除号   | Total_Sale/Quantity  | A/B  |
+| 运算符  | 描述   | 语法                   | 示例                  |
+| ---- | ---- | -------------------- | ------------------ |
+| +    | 加号   | A+B          | Cost+Profit          |
+| -    | 减号   | A-B          | Revenue- Cost          |
+| *    | 称号   | A*B          | Unit_Price* Quantity          |
+| /    | 除号   | A/B          | Total_Sale/Quantity          |
 
 ### 字符串运算符
 
