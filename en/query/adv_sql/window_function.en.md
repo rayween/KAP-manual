@@ -1,10 +1,10 @@
-# Window Function
+## Window Function
 
 Since KAP v2.1, we've provided window function in KAP to support more complicated query, keeping SQL query simple and work well. Here we are going to introduce how to use this function.
 
 
 
-## Window Function
+### Window Function
 
 Window Functions query supported by KAP is list as follow:
 
@@ -21,7 +21,7 @@ Window Functions query supported by KAP is list as follow:
 
 
 
-## Example
+### Example
 
 In this section, we would take a dataset defaulted in KAP as data source to practice some typical query mentioned above. Step by step, we will introduce you how to use Window Function in KAP.
 
@@ -51,3 +51,6 @@ Result would be:
 
 ![](images/wd_lead_date.png)
 
+
+
+**Note**: This function is inapplicable to Computed Column. For the information of computed column, please refer to the section [Computed Column](model/computed_column.en.md) in the chapter of **Modeling**.

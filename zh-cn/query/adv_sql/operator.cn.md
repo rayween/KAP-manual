@@ -1,6 +1,6 @@
 ## 运算符
 
-KAP 支持以下运算符：
+本节介绍适用于查询的运算符：
 
 ### 比较运算符
 
@@ -36,12 +36,12 @@ KAP 支持以下运算符：
 
 ### 算术运算符
 
-| 运算符  | 描述   | 语法                   | 示例                  |
-| ---- | ---- | -------------------- | ------------------ |
-| +    | 加号   | A+B          | Cost+Profit          |
-| -    | 减号   | A-B          | Revenue- Cost          |
-| *    | 称号   | A*B          | Unit_Price* Quantity          |
-| /    | 除号   | A/B          | Total_Sale/Quantity          |
+| 运算符  | 描述   | 语法   | 示例                   |
+| ---- | ---- | ---- | -------------------- |
+| +    | 加号   | A+B  | Cost+Profit          |
+| -    | 减号   | A-B  | Revenue- Cost        |
+| *    | 称号   | A*B  | Unit_Price* Quantity |
+| /    | 除号   | A/B  | Total_Sale/Quantity  |
 
 ### 字符串运算符
 

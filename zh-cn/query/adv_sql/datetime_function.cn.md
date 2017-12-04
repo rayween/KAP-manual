@@ -22,3 +22,5 @@
 | SECOND(date)                             | 返回日期中的秒数，返回结果为0到59的整数，等同于`EXTRACT(SECOND FROM date)`. | `select SECOND(CURRENT_TIME)`            | `28`                   |
 | TIMESTAMPADD(timeUnit, integer, datetime) | 返回添加了*timeUnit*s为单位的时间integer后的日期*datetime*,返回类型为*datetime*,等同于`datetime + INTERVAL 'integer' timeUnit` 。 如示例中的函数返回日期part_dt加一个月。 | `select TIMESTAMPADD(month, 1, date'2012-01-01'),date'2012-01-01'` | ` 2012-02-01`          |
 | TIMESTAMPDIFF(timeUnit, datetime, datetime2) | 返回*datetime*和*datetime2*的时间差，以timeUnit为单位返回，等同于`(datetime2 - datetime) timeUnit` | `select TIMESTAMPDIFF(month, date'2012-01-01', date '2012-02-01')` | `1`                    |
+
+注：此函数不适用于可计算列。有关可计算列，参见**数据建模**一章中的[可计算列](model/computed_column.cn.md)一节。

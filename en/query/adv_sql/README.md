@@ -1,9 +1,9 @@
-# Operator and Function
+# Operators and Functions
 
-This chapter will introduce you more operator and functions KAP support,
+This chapter will introduce more operators and functions applicable to SQL query.
 
 Continue reading:
 
-[Operator](operator.en.md)
+[Operators](operator.en.md)
 
-[Function](function.en.md)
+[Functions](function.en.md)

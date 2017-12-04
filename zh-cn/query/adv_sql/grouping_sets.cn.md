@@ -50,3 +50,6 @@ order by LEAF_CATEG_ID
 
 ![](images/grouping_sets.2.png)
 
+
+
+注：此函数不适用于可计算列。有关可计算列，参见**数据建模**一章中的[可计算列](model/computed_column.cn.md)一节。

@@ -1,14 +1,21 @@
-## Function
+## Functions
 
-KAP suppports below functions, click on each section to read more details:
+Here we will introduce functions applicable to SQL query. Click on each section to read more details:
 
-[Arithmetic function](arithmetic_function.en.md) 
+[Arithmetic Function](arithmetic_function.en.md) 
 
-[String function](string_function.en.md)
+[String Function](string_function.en.md)
 
-[Date and time function](datetime_function.en.md)
+[Date and Time Function](datetime_function.en.md)
 
-[Conditional function](conditional_function.en.md)
+[Conditional Function](conditional_function.en.md)
 
-[Type function](type_function.en.md)
+[Type Function](type_function.en.md)
 
+[Window Function](window_function.en.md)
+
+[Grouping Function](grouping_sets.en.md)
+
+[Intersect Function](intersect_count.en.md)
+
+[Aggregate Function](aggregate_function.en.md)

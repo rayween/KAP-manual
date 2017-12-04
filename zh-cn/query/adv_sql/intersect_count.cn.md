@@ -53,3 +53,7 @@ group by LSTG_FORMAT_NAME
 如运行正确，则返回结果将如下。以下结果表示并没有卖家在新年阶段进行持续的在线交易。
 
 ![](images/intersect_count.1.png)
+
+
+
+注：此函数不适用于可计算列。有关可计算列，参见**数据建模**一章中的[可计算列](model/computed_column.cn.md)一节。

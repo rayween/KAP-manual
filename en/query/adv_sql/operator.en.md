@@ -1,6 +1,6 @@
-## Operator
+## Operators
 
-KAP suppports below operators:
+The following are operators applicable to SQL query.
 
 ### Comparison Operator 
 
@@ -45,6 +45,4 @@ KAP suppports below operators:
 
 ### String Operator
 
-| Opeartor | Decription         | Syntax | Example                 |
-| -------- | ------------------ | ------ | ----------------------- |
-| \|\|     | string \|\| string | A\|\|B | First_name\|\|Last_name |
+![](images/operator.png)

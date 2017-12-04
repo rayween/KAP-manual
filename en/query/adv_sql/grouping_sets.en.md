@@ -1,10 +1,10 @@
-# Grouping Sets
+## Grouping Sets
 
 Since KAP v2.1, we've provided grouping sets function in KAP to support when we want aggregate data by different keys in one SQL statements. Here we are going to introduce how to use this function. 
 
 
 
-## Grouping Sets Function
+### Grouping Sets Function
 
 Grouping sets function query supported by KAP is list as follow:
 
@@ -16,7 +16,7 @@ Grouping sets function query supported by KAP is list as follow:
 
 
 
-## Example
+### Example
 
 In this section, we would take a dataset defaulted in KAP as data source to practice some typical query mentioned above. Step by step, we will introduce you how to use Grouping sets Function in KAP.
 
@@ -26,7 +26,7 @@ Select a default **Data Source** named as `learn_kylin`, then the table structur
 
 ![](images/wd_datasample.png)
 
-## Group query
+### Group query
 
 To get sales of different brands(or products), input query as: `select LEAF_CATEG_ID, LSTG_FORMAT_NAME, sum(PRICE) as metric1 from kylin_sales group by LEAF_CATEG_ID, LSTG_FORMAT_NAME`, then results returned in 0.26sec would be as follow.
 
@@ -34,7 +34,7 @@ To get sales of different brands(or products), input query as: `select LEAF_CATE
 
 
 
-## Grouping sets query
+### Grouping sets query
 
 If you also want to see the result with `lstg_format_name`(dim2) rolled up, we can rewrite the sql:
 
@@ -50,3 +50,6 @@ order by LEAF_CATEG_ID
 
 ![](images/grouping_sets.2.png)
 
+
+
+**Note**: This function is inapplicable to Computed Column. For the information of computed column, please refer to the section [Computed Column](model/computed_column.en.md) in the chapter of **Modeling**.
