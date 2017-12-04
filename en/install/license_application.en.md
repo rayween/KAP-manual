@@ -14,5 +14,11 @@ To apply for KAP license and KAP Plus license, do the following:
 
 ![License Application](images/license_2.en.png)
 
-3. When the evaluation period expires, if you still want to use KAP Plus of KAP, contact our sales person to buy the official license.
+3. If you want to purchase **Official License** of KAP Plus or KAP, click **Help -> About KAP** in KAP Plus or KAP.    
+
+   ![License Application](images/license_3.en.png)
+
+   And then click **Generate License Request File**. The sales will follow your request in a couple of days.
+
+   ![License Application](images/license_4.en.png)
 
