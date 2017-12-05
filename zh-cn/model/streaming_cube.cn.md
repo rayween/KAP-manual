@@ -32,6 +32,7 @@ KAP 从 2.3.x 开始提供了流式构建的功能，用户能够以 Kafka 为�
 
 * 不要使用"order\_time"作为dimension，因为这个属性是一个十分细粒度的属性。这里，我们建议您使用"mintue\_start", "hour\_start" 等时间属性。
 * 在"refersh setting" 步骤，您可以定义更多的构建间隔时间，例如0.5小时，4小时，１天，７天等。这有助于Segment的自动合并。
+* "minute_start"是model的分区列，需要被定义为Dimension。
 * 在选择"rowkeys" 的环节, 请将"minute\_start" 拖拽到所有属性的最顶部。对于基于流式Cube的查询，时间维度会是一个经常被用到的维度，因此，将其放在rowkeys前面有助于快速过滤。
 
  ![](images/s11.png)
