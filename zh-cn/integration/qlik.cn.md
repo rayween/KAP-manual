@@ -135,6 +135,6 @@ on (KYLIN_COUNTRY.COUNTRY=KYLIN_ACCOUNT.ACCOUNT_COUNTRY)
 
 ![在 Qlik Sense 中查看 KAP 数据](images/qlik/final.png)
 
-注意，如果要使查询击中 Cube，创建的度量应与 Cube 中定义的度量匹配。例如，在 Learn_kylin 项目的 kylin_sales_cube 中，我们使用 Min(price)：
+注意，如果要使查询击中 Cube，创建的度量应与 Cube 中定义的度量匹配。例如，在 Learn_kylin 项目的 kylin_sales_cube 中，我们使用 Sum(price)：
 
 ![创建可击中 Cube 的度量](images/qlik/measure.cn.png)
