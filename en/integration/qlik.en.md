@@ -61,6 +61,8 @@ You may also be able to utilize KAP built-in functions by creating a Native expr
 
 `NATIVE('extract(month from PART_DT)') ` 
 
+Make sure to update `LIB CONNECT TO 'kylin';` to the DSN you created. 
+
 ```sql
 SET ThousandSep=',';
 SET DecimalSep='.';
