@@ -57,6 +57,8 @@ Qlik Sense 是新一代自助式数据可视化工具。它是一款完整的商
 
 `NATIVE('extract(month from PART_DT)') ` 
 
+请确保将脚本中的`LIB CONNECT TO 'kylin';`修改成你创建的DSN名称。
+
 ```sql
 SET ThousandSep=',';
 SET DecimalSep='.';
