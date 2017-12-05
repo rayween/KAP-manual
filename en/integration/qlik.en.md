@@ -11,11 +11,11 @@ For the installation information, please refer to [Kyligence ODBC Driver tutoria
 For the installation of Qlik Sense, please visit [Qlik Sense Desktop download](https://www.qlik.com/us/try-or-buy/download-qlik-sense).
 
 ### Connection with Qlik Sense
-After configuring your Local DSN and installing Qlik Sense successfully, you may go through the following steps to connect Kylin with Qlik Sense.
+After configuring your Local DSN and installing Qlik Sense successfully, you may go through the following steps to connect KAP with Qlik Sense.
 
 1. From Windows Desktop Shortcut or click **Start -> All Applications -> Qlik Sense -> Qlik Sense Desktop** to open the application **Qlik Sense Desktop**.
 
-2. Input your Qlik account to login, then the following dialog will pop up. Click **Create New Application**.
+2. Input your Qlik account to login, then the following dialog will pop up. Click **Create A New App**.
 
 ![Create New Application](images/qlik/welcome_to_qlik_desktop.png)
 
@@ -51,9 +51,9 @@ Below is the screenshot of such Direct Query script against *kylin_sales_cube* i
 
 ![Script](images/qlik/script_run_result.png)
 
-Once you defined such script, Qlik sense can generate SQL based on this script for your report.
+Once you defined such script, Qlik Sense can generate SQL based on this script for your report.
 
-It is recommended that you define Dimension and Measure corresponding to the Dimension and Measure in the Kylin Cube.  
+It is recommended that you define Dimension and Measure corresponding to the Dimension and Measure in the KAP Cube.  
 
 The whole script has been posted for your reference. 
 
@@ -81,8 +81,7 @@ SET LongMonthNames='January;February;March;April;May;June;July;August;September;
 SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
 SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
 
-LIB CONNECT TO 'KAP';
-
+LIB CONNECT TO 'kylin';
 
 DIRECT QUERY
 DIMENSION 
@@ -117,7 +116,7 @@ JOIN KYLIN_COUNTRY
 on (KYLIN_COUNTRY.COUNTRY=KYLIN_ACCOUNT.ACCOUNT_COUNTRY)
 ```
 
-Click **Load Data** on the upper right of the window, Qlik sense will then send out inspection query to test the connection based on the script.
+Click **Load Data** on the upper right of the window, Qlik Sense will then send out inspection query to test the connection based on the script.
 
 ![Load Data](images/qlik/load_data.png)
 
@@ -127,7 +126,7 @@ On the top left manu open **App Overview**.
 
 ![Open App Overview](images/qlik/go_to_app_overview.png)
 
- Click **Create new sheet** on this page.
+ Click **Create new sheet** on the pop-up page.
 
 ![Create new sheet](images/qlik/create_new_report.png)
 
