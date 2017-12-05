@@ -12,13 +12,13 @@ To apply for KAP license and KAP Plus license, do the following:
 
 2. After login, select the license of **KAP Plus** or **KAP** based on your requirement. If you apply for KAP Evaluation License, just click the corresponding **Download Evaluation License** link. If you apply for KAP Plus Evaluation License, fill in an application form first. When you are approved to use KAP Plus, you will received a notification email sent by the system. Then login  [Kyligence Account Center](http://account.kyligence.io/) again and click the corresponding  **Download Evaluation License** link.
 
-![License Application](images/license_2.en.png)
+![Evaluation License Application](images/license_2.en.png)
 
 3. If you want to purchase **Official License** of KAP Plus or KAP, you need to provide **License Request File**. Click **Help -> About KAP** in KAP Plus or KAP.   
 
-   ![License Application](images/license_3.en.png)
+   ![Official License Application](images/license_3.en.png)
 
    And then click **Generate License Request File**. You will get the request file.
 
-   ![License Application](images/license_4.en.png)
+   ![Request License File](images/license_4.en.png)
 

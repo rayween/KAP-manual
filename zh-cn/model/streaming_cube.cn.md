@@ -2,7 +2,7 @@
 
 KAP 从 2.3.x 开始提供了流式构建的功能，用户能够以 Kafka 为数据源，根据时间间隔流式构建 cube。本文档提供了一个简单的教程，向用户展示如何创建流式 cube。
 
-有关 Kafka 数据源导入以及从流式数据定义事实表的信息，参见本章“数据导入”一节下面的[导入 Kafka 数据源](kafka_import.cn.md)。
+有关 Kafka 数据源导入以及从流式数据定义事实表的信息，参见本章“数据导入”一节下面的[导入 Kafka 数据源](data_import/kafka_import.cn.md)。
 
 ### 创建model
 
