@@ -29,6 +29,7 @@ The streaming cube is almost the same as a normal cube. A couple of points need 
 
 * Don't use "order\_time" as dimension as that is pretty fine-grained, here we suggest to use "mintue\_start", "hour\_start" or other, depending on how you inspect the data.
 * In the "refersh setting" step, you should create more merge ranges, like 0.5 hour, 4 hours, 1 day, and 7 days. This helps control the cube segment amount.
+* "minute_start" is the partition column of model and shall be defined as Dimension.
 * In the "rowkeys" section, drag the "minute\_start" to the head position. For streaming queries, the time condition is used frequently. So putting it to the head will help narrow down the scan range.
 
  ![](images/k.png)
