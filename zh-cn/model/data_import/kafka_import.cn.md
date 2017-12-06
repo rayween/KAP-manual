@@ -51,11 +51,11 @@ bin/kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic kylindem
 1. 启动KAP, 登录KAP web GUI, 新建一个project或者选择一个已有的project。点击 "Studio" -> "Data Source"，点击"Kafka"按钮。
    ![](images/s1.png)
 2. 输入Broker集群信息，注意：这里Host要填写实际IP地址，是YARN集群上运行的Job可以访问的地址。
-   ![](images/s2.png)
+   ![](images/s2.cn.png)
 
 
 3. 点击 √ 确认Broker后，点击 Get Cluster Info -> sandbox -> kylindemo, Kafka的采样消息会出现在右边，点击 Convert。
-   ![](images/s3.png)
+   ![](images/s3.cn.png)
 
 
 4. 接着，您需要为流式数据源定义一个表名。定义的表名会用于后续的 SQL 查询。 假设我们将表命名为 "KAFKA_TABLE_1" 。
