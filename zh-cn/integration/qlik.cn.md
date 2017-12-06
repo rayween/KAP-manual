@@ -57,7 +57,7 @@ Qlik Sense 是新一代自助式数据可视化工具。它是一款完整的商
 
 `NATIVE('extract(month from PART_DT)') ` 
 
-请确保将脚本中的`LIB CONNECT TO 'kylin';`修改成你创建的DSN名称。
+请确保将脚本中的 `LIB CONNECT TO 'kylin';` 修改成你创建的 DSN 名称。
 
 ```sql
 SET ThousandSep=',';
@@ -133,7 +133,7 @@ on (KYLIN_COUNTRY.COUNTRY=KYLIN_ACCOUNT.ACCOUNT_COUNTRY)
 
 这样，新的工作表创建完成，KAP 与 Qlik Sense 相连。现在您可以在 Qlik Sense 中查看 KAP 数据。
 
-![在 Qlik Sense 中查看 KAP 数据](images/qlik/final.png)
+![在 Qlik Sense 中查看 KAP 数据](images/qlik/view_kap_data.cn.png)
 
 注意，如果要使查询击中 Cube，创建的度量应与 Cube 中定义的度量匹配。例如，在 Learn_kylin 项目的 kylin_sales_cube 中，我们使用 Sum(price)：
 
