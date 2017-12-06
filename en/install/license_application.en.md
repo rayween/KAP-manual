@@ -1,6 +1,6 @@
 ## License Application
 
-License is the precondition to use KAP. After installing and deploying KAP, you need apply for license to use KAP. There are KAP license, KAP Plus license and KyBot license in KAP products. Both KAP license and KAP Plus license include Evaluation License (Evaluation Period for each: Two months) and Official License. KyBot online service includes Basic, Standard and Professional Versions. The Professional Version provides more services and SLA support. The license of KAP and KAP Plus is different, so their application process varies a lttile. This article will introduce how to apply for KAP license and KAP Plus license.
+License is the precondition to use KAP. After installing and deploying KAP, you need apply for license to use KAP. There are KAP license, KAP Plus license and KyBot license in KAP products. Both KAP license and KAP Plus license include Evaluation License (Evaluation Period for each: Two months) and Official License. KyBot online service includes Basic, Standard and Professional Versions. The Professional Version provides more services and SLA support. The license of KAP and KAP Plus is different, so their application process varies a little. This article will introduce how to apply for KAP license and KAP Plus license.
 
 ### Application Process
 
