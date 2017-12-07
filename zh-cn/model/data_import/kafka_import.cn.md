@@ -48,32 +48,30 @@ bin/kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic kylindem
 
 ### 从流式数据中定义事实表
 
-1. 启动KAP, 登录KAP web GUI, 新建一个project或者选择一个已有的project。点击 "Studio" -> "Data Source"，点击"Kafka"按钮。
-   ![](images/s1.png)
-2. 输入Broker集群信息，注意：这里Host要填写实际IP地址，是YARN集群上运行的Job可以访问的地址。
-   ![](images/s2.cn.png)
 
+1.启动KAP, 登录KAP web GUI, 新建一个project或者选择一个已有的project。点击**建模 -> 数据源**，点击 **Kafka** 按钮。
+![导入 Kafka 数据源](images/s1.png)
 
-3. 点击 √ 确认Broker后，点击 Get Cluster Info -> sandbox -> kylindemo, Kafka的采样消息会出现在右边，点击 Convert。
-   ![](images/s3.cn.png)
+2.输入Broker集群信息，注意：这里Host要填写实际IP地址，是YARN集群上运行的Job可以访问的地址。
+![输入 Broker 集群信息](images/k2.cn.png)
 
+3.点击 √ 确认Broker后，点击**获取该集群信息 -> sandbox -> kylindemo**, Kafka的采样消息会出现在右边，点击 **Convert**。
+![获取 Broker 集群信息](images/k3.cn.png)
 
-4. 接着，您需要为流式数据源定义一个表名。定义的表名会用于后续的 SQL 查询。 假设我们将表命名为 "KAFKA_TABLE_1" 。
-   ![](images/s4.png)
+4.接着，您需要为流式数据源定义一个表名。定义的表名会用于后续的 SQL 查询。 假设我们将表命名为 "KAFKA_TABLE_1" 。
+![为流式数据源定义表名](images/s4.png)
 
-5. 检查表结构是否正确，确保至少有一列被选择为timestamp。
+5.检查表结构是否正确，确保至少有一列被选择为timestamp。
+![至少一列为 timestamp](images/s5.png)
 
-   ![](images/s5.png)
+6.设置解析器
 
-6. 设置解析器
+解析器名称: 默认为org.apache.kylin.source.kafka.TimedJsonStreamParser，您也可以自定义解析器
 
-   解析器名称: 默认为org.apache.kylin.source.kafka.TimedJsonStreamParser，您也可以自定义解析器
+时间戳字段名称: 必须为解析器指定一列用于分段的时间字段，本例选择了order_time
 
-   时间戳字段名称: 必须为解析器指定一列用于分段的时间字段，本例选择了order_time
+解析器属性: 为解析器定义更多属性
 
-   解析器属性: 为解析器定义更多属性
+![设置解析器](images/s6.png)
 
-   ![](images/s6.png)
-
-7. 点击"提交"
-
+7.点击**提交**。

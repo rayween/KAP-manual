@@ -23,7 +23,7 @@ Select 'MINUTE_START' as partition column. Save the data model.
 ![](images/j.png)
 
 
-### Create cube
+### Create Cube
 
 The streaming cube is almost the same as a normal cube. A couple of points need your attention here:
 
