@@ -1,34 +1,33 @@
-## 用户管理 REST API
+## User Management REST API
 
-> **提示**
+> **Tip**
 >
-> 使用API前请确保已阅读前面的**访问及安全认证**章节，知道如何在API中添加认证信息。
->
+> Before using API, please make sure that you have read the previous chapter of *Access and Authentication* in advance and know how to add verification information in API. 
 
 
-* [获取所有用户](#获取所有用户)
-* [创建用户](#创建用户)
-* [修改用户](#修改用户)
-* [删除用户](#删除用户)
+* [Get All Users](#get-all-users)
+* [Create User](#create-user)
+* [Modify User](#modify-user)
+* [Delete User](#delete-user)
 
-### 获取所有用户
-`请求方式 GET`
+### Get All Users
+`Request Mode GET`
 
-`访问路径 http://host:port/kylin/api/kap/users`
+`Access Path http://host:port/kylin/api/kap/users`
 
 `Content-Type: application/vnd.apache.kylin-v2+json`
 
-#### 请求参数
-* project - `可选` `string`，用来判断当前用户是否有拉取所有用户的权限，为空时需要全局 admin 权限才能拉取
-* name - `可选` `string`，用来过滤拉取的用户列表
-* isCaseSensitive - `可选` `bool`，表示上面 name 参数的模糊匹配是否为区分大小写，默认不区分大小写
-* pageOffset - `可选` `int`
-* pageSize - `可选` `int`
+#### Request Parameter
+* project - `optional` `string`, determine if the current user has the permission to get all users. If it is blank, the current user shall have Admin permission to get all users.
+* name - `optional` `string`, filter the user list.
+* isCaseSensitive - `optional` `bool`, indicate if the fuzzy matching of the above parameter, name, is case sensitive. It is case insensitive by default. 
+* pageOffset - `optional` `int`
+* pageSize - `optional` `int`
 
-#### 请求示例
-`请求路径: http://host:port/kylin/api/kap/user/users?pageSize=9&pageOffset=0&project=default`
+#### Request Example
+`Request Path: http://host:port/kylin/api/kap/user/users?pageSize=9&pageOffset=0&project=default`
 
-#### 响应示例
+#### Response Example
 ```json
 {
   "code": "000",
@@ -95,28 +94,28 @@
 }
 ```
 
-### 创建用户
-`请求方式 POST`
+### Create User
+`Request Mode POST`
 
-`访问路径 http://host:port/kylin/api/kap/user/{userName}`
+`Access Path http://host:port/kylin/api/kap/user/{userName}`
 
 `Content-Type: application/vnd.apache.kylin-v2+json`
 
-#### 路径变量
-* userName - `必选` `string`，用户名
+#### Path Variable
+* userName - `required` `string`, user name
 
-#### 请求主体
-* username - `必选` `string`，用户名
-* password - `必选` `string`，密码
-* disabled - `必选` `bool`，是否启用
-* authorities - `必选` `string列表`，用户属于哪些组
+#### Request Body
+* username - `required` `string`, user name
+* password - `required` `string`, password
+* disabled - `required` `bool`, enabled or not
+* authorities - `required` `string list`, determine which group the user belongs to
 
-#### 请求示例
-`请求路径:http://host:port/kylin/api/kap/user/t`
+#### Request Example
+`Request Path:http://host:port/kylin/api/kap/user/t`
 
-`请求主体:{username: "t", password: "1qaz@WSX", disabled: false, authorities: ["ROLE_ADMIN"]}`
+`Request Body:{username: "t", password: "1qaz@WSX", disabled: false, authorities: ["ROLE_ADMIN"]}`
 
-#### 响应示例
+#### Response Example
 ```json
 {
   "username": "t",
@@ -137,28 +136,28 @@
 }
 ```
 
-### 修改用户
-`请求方式 PUT`
+### Modify User
+`Request Mode PUT`
 
-`访问路径 http://host:port/kylin/api/kap/user/{userName}`
+`Access Path http://host:port/kylin/api/kap/user/{userName}`
 
 `Content-Type: application/vnd.apache.kylin-v2+json`
 
-#### 路径变量
-* userName - `必选` `string`，用户名
+#### Path Variable
+* userName - `required` `string`, user name
 
-#### 请求主体
-* username - `必选` `string`，用户名
-* password - `必选` `string`，密码
-* disabled - `必选` `bool`，是否启用
-* authorities - `必选` `string列表`
+#### Request Body
+* username - `required` `string`, user name
+* password - `required` `string`, password
+* disabled - `required` `bool`, enabled or not
+* authorities - `required` `string list`
 
-#### 请求示例
-`请求路径:http://host:port/kylin/api/kap/user/t`
+#### Request Example
+`Request Path:http://host:port/kylin/api/kap/user/t`
 
-`请求主体:{username: "t", password: "1qaz@WSX", disabled: false, authorities: ["ROLE_ADMIN"]}`
+`Request Body:{username: "t", password: "1qaz@WSX", disabled: false, authorities: ["ROLE_ADMIN"]}`
 
-#### 响应示例
+#### Response Example
 ```json
 {
   "username": "t",
@@ -179,15 +178,15 @@
 }
 ```
 
-### 删除用户
-`请求方式 DELETE`
+### Delete User
+`Request Mode DELETE`
 
-`访问路径 http://host:port/kylin/api/kap/user/{userName}`
+`Access Path http://host:port/kylin/api/kap/user/{userName}`
 
 `Content-Type: application/vnd.apache.kylin-v2+json`
 
-#### 路径变量
-* userName - `必选` `string`，用户名
+#### Path Variable
+* userName - `required` `string`, user name
 
-#### 请求示例
-`请求路径:http://host:port/kylin/api/kap/user/t`
+#### Request Example
+`Request Path:http://host:port/kylin/api/kap/user/t`

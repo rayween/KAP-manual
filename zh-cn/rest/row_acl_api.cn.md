@@ -1,24 +1,26 @@
-## Row ACL REST API
+## 行级访问权限 REST API
 
 > **提示**
 >
-> 使用API前请确保已阅读前面的 访问及安全验证 章节，知道如何在API中添加认证信息
+> 使用API前请确保已阅读前面的**访问及安全认证**章节，知道如何在API中添加认证信息。
 >
 
 
-* [获得用户的行级ACL](#获得用户的行级ACL)
+* [获取用户的行级ACL](#获取用户的行级ACL)
 * [添加用户的行级ACL](#添加用户的行级ACL)
 * [修改用户的行级ACL](#修改用户的行级ACL)
 * [删除用户的行级ACL](#删除用户的行级ACL)
 
-### 获得用户的行级ACL
+### 获取用户的行级ACL
 `请求方式 GET`
 
 `访问路径 http://host:port/kylin/api/acl/row/{project}/{table}`
 
+`Content-Type: application/vnd.apache.kylin-v2+json`
+
 #### 路径变量
-* project - `必选` `string` project
-* table - `必选` `string` table
+* project - `必选` `string`，项目名称
+* table - `必选` `string`，表名称
 
 #### 请求示例
 `请求路径:http://host:port/kylin/api/acl/row/learn_kylin/DEFAULT.KYLIN_SALES`
@@ -80,20 +82,22 @@
 
 `访问路径 http://host:port/kylin/api/acl/row/{project}/{type}/{table}/{username}`
 
+`Content-Type: application/vnd.apache.kylin-v2+json`
+
 #### 路径变量
-* project - `必选` `string` project
-* type - `必选` `string`用来标示操作是用户还是组,取值:user/group
-* table - `必选` `string` table
-* username - `必选` `string` username
+* project - `必选` `string`，项目名称
+* type - `必选` `string`，用来表示操作是用户操作还是用户组操作，取值：user/group
+* table - `必选` `string`，表名称
+* username - `必选` `string`，用户名
 
 #### 请求主体
-* condsWithColumn - `必选` `map` 列与conditions的键值对,详见下面的请求示例中的request body
+* condsWithColumn - `必选` `map` 列与conditions的键值对，详见下面请求示例中的请求主体
 
 #### 请求示例
 `请求路径:http://host:port/kylin/api/acl/row/learn_kylin/DEFAULT.KYLIN_SALES/ADMIN`
 
 ```
-request body:代表 TRANS_ID 的取值为1,2,3.(TRANS_ID=1 OR TRANS_ID=2 OR TRANS_ID=3)
+请求主体:代表 TRANS_ID 的取值为1,2,3.(TRANS_ID=1 OR TRANS_ID=2 OR TRANS_ID=3)
 
 {
   "condsWithColumn": {
@@ -127,20 +131,22 @@ request body:代表 TRANS_ID 的取值为1,2,3.(TRANS_ID=1 OR TRANS_ID=2 OR TRAN
 `请求方式 PUT`
 `访问路径 http://host:port/kylin/api/acl/row/{project}/{type}/{table}/{username}`
 
+`Content-Type: application/vnd.apache.kylin-v2+json`
+
 #### 路径变量
-* project - `必选` `string` project
-* type - `必选` `string`用来标示操作是用户还是组,取值:user/group
-* table - `必选` `string` table
-* username - `必选` `string` username
+* project - `必选` `string`，项目名称
+* type - `必选` `string`，用来表示操作是用户操作还是用户组操作，取值：user/group
+* table - `必选` `string`，表名称
+* username - `必选` `string`，用户名
 
 #### 请求主体
-* condsWithColumn - `必选` `map` 列与conditions的键值对,详见下面的请求示例
+* condsWithColumn - `必选` `map` 列与conditions的键值对，详见下面的请求示例中的请求主体
 
 #### 请求示例
 `请求路径:http://host:port/kylin/api/acl/row/learn_kylin/user/DEFAULT.KYLIN_SALES/ADMIN`
 
 ```
-request body: 代表 TRANS_ID 的取值为1,2,3.(TRANS_ID=1 OR TRANS_ID=2 OR TRANS_ID=3)
+请求主体: 代表 TRANS_ID 的取值为1,2,3.(TRANS_ID=1 OR TRANS_ID=2 OR TRANS_ID=3)
 
 {
   "condsWithColumn": {
@@ -175,14 +181,16 @@ request body: 代表 TRANS_ID 的取值为1,2,3.(TRANS_ID=1 OR TRANS_ID=2 OR TRA
 
 `访问路径 http://host:port/kylin/api/acl/row/{project}/{type}/{table}/{username}`
 
+`Content-Type: application/vnd.apache.kylin-v2+json`
+
 #### 路径变量
-* project - `必选` `string` project
-* type - `必选` `string`用来标示操作是用户还是组,取值:user/group
-* table - `必选` `string` table
-* username - `必选` `string` username
+* project - `必选` `string`，项目名称
+* type - `必选` `string`，用来表示操作是用户操作还是用户组操作，取值：user/group
+* table - `必选` `string`，表名称
+* username - `必选` `string`，用户名
 
 #### 请求示例
-http://host:port/kylin/api/acl/row/learn_kylin/user/DEFAULT.KYLIN_SALES/ADMIN
+`请求路径:http://host:port/kylin/api/acl/row/learn_kylin/user/DEFAULT.KYLIN_SALES/ADMIN`
 
 #### 响应示例
 ```

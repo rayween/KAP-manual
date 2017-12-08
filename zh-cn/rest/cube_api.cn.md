@@ -2,7 +2,7 @@
 
 > **提示**
 >
-> 使用API前请确保已阅读前面的 访问及安全验证 章节，知道如何在API中添加认证信息
+> 使用API前请确保已阅读前面的**访问及安全认证**章节，知道如何在API中添加认证信息。
 >
 
 
@@ -87,7 +87,7 @@
 `Content-Type: application/vnd.apache.kylin-v2+json`
 
 #### 路径变量
-* projectName - `必选` `string` Project 名称.
+* projectName - `必选` `string` 项目名称.
 * cubeName - `必选` `string` Cube 名称.
 
 #### 响应示例

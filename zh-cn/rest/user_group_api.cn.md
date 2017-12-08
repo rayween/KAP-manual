@@ -1,25 +1,27 @@
-## User group REST API
+## 用户组管理 REST API
 
 > **提示**
 >
-> 使用API前请确保已阅读前面的 访问及安全验证 章节，知道如何在API中添加认证信息
+> 使用API前请确保已阅读前面的**访问及安全认证**章节，知道如何在API中添加认证信息。
 >
 
 
-* [获得所有用户组](#获得所有用户组)
-* [获得用户组及其用户](#获得用户组及其用户)
+* [获取所有用户组](#获取所有用户组)
+* [获取用户组及其用户](#获取用户组及其用户)
 * [增加用户组](#增加用户组)
 * [删除用户组](#删除用户组)
-* [获得特定用户组下的所有用户](#获得特定用户组下的所有用户)
+* [获取特定用户组下的所有用户](#获取特定用户组下的所有用户)
 * [向用户组中加入用户](#向用户组中加入用户)
 
-### 获得所有用户组
+### 获取所有用户组
 `请求方式 GET`
 
 `访问路径 http://host:port/kylin/api/user_group/groups`
 
+`Content-Type: application/vnd.apache.kylin-v2+json`
+
 #### 请求主体
-* project - `必须` `string` 用来判断当前用户是否有拉取所有用户的权限
+* project - `必须` `string`，用来判断当前用户是否有拉取所有用户的权限
 
 #### 请求示例
 `请求路径:http://host:port/kylin/api/user_group/groups?project=a`
@@ -38,10 +40,12 @@
 }
 ```
 
-### 获得用户组及其用户
+### 获取用户组及其用户
 `请求方式 GET`
 
 `访问路径 http://host:port/kylin/api/user_group/usersWithGroup`
+
+`Content-Type: application/vnd.apache.kylin-v2+json`
 
 #### 请求参数
 * pageOffset - `可选` `int`
@@ -90,6 +94,8 @@
 
 `访问路径 http://host:port/kylin/api/user_group/{groupName}`
 
+`Content-Type: application/vnd.apache.kylin-v2+json`
+
 #### 路径变量
 * groupName - `必选` `string` 组名
 
@@ -101,16 +107,20 @@
 
 `访问路径 http://host:port/kylin/api/user_group/{groupName}`
 
+`Content-Type: application/vnd.apache.kylin-v2+json`
+
 #### 路径变量
 * groupName - `必选` `string` 组名
 
 #### 请求示例
 `请求路径:http://host:port/kylin/api/user_group/g1`
 
-### 获得特定用户组下的所有用户
+### 获取特定用户组下的所有用户
 `请求方式 GET`
 
 `访问路径 http://host:port/kylin/api/user_group/groupMembers/{name}`
+
+`Content-Type: application/vnd.apache.kylin-v2+json`
 
 #### 路径变量
 * name - `必选` `string` 组名
@@ -190,13 +200,15 @@
 
 `访问路径 http://host:port/kylin/api/user_group/users/{groupName}`
 
+`Content-Type: application/vnd.apache.kylin-v2+json`
+
 #### 路径变量
 * groupName - `必选` `string` 组名
 
 #### 请求主体
-用户列表,,详见下面的请求示例中的request body
+用户列表，详见下面请求示例中的请求主体
 
 #### 请求示例
 `请求路径:http://host:port/kylin/api/user_group/users/g1`
 
-`request body:["ADMIN","ANALYST","MODELER"]`
+`请求主体:["ADMIN","ANALYST","MODELER"]`

@@ -20,3 +20,15 @@ KAP提供了全面的REST API，可以用来查询模型，触发构建任务，
 
 [异步查询 API](async_query_api.cn.md)
 
+[列级访问权限 API](column_acl_api.cn.md)
+
+[行级访问权限 API](row_acl_api.cn.md)
+
+[表级访问权限 API](table_acl_api.cn.md)
+
+[项目级访问权限 API](project_access_api.cn.md)
+
+[用户管理 API](user_api.cn.md)
+
+[用户组管理 API](user_group_api.cn.md)
+
