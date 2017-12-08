@@ -1,8 +1,8 @@
-## Table ACL REST API
+## 表级访问权限 REST API
 
 > **提示**
 >
-> 使用API前请确保已阅读前面的 访问及安全验证 章节，知道如何在API中添加认证信息
+> 使用API前请确保已阅读前面的**访问及安全认证**章节，知道如何在API中添加认证信息。
 >
 
 
@@ -15,16 +15,18 @@
 
 `访问路径 http://host:port/kylin/api/acl/table/{project}/{table}`
 
+`Content-Type: application/vnd.apache.kylin-v2+json`
+
 #### 路径变量
-* project - `必选` `string` project
-* table - `必选` `string` table
+* project - `必选` `string`，项目名称
+* table - `必选` `string`，表名称
 
 #### 请求示例
-http://host:port/kylin/api/acl/table/learn_kylin/DEFAULT.KYLIN_SALES
+`请求路径:http://host:port/kylin/api/acl/table/learn_kylin/DEFAULT.KYLIN_SALES`
 
 #### 响应示例
-first: 用户名/组名
-second: 标示是用户还是组
+first: 用户名/用户组名
+second: 表示是用户还是用户组
 
 ```json
 {
@@ -48,14 +50,16 @@ second: 标示是用户还是组
 
 `访问路径 http://host:port/kylin/api/acl/table/{project}/{type}/{table}/{name}`
 
+`Content-Type: application/vnd.apache.kylin-v2+json`
+
 #### 路径变量
-* project - `必选` `string` project
-* type - `必选` `string`用来标示操作是用户还是组,取值:user/group
-* table - `必选` `string` table
-* name - `必选` `string` name
+* project - `必选` `string`，项目名称
+* type - `必选` `string`，用来表示操作是用户操作还是用户组操作，取值：user/group
+* table - `必选` `string`，表名称
+* name - `必选` `string`，用户名
 
 #### 请求示例
-http://host:port/kylin/api/acl/table/learn_kylin/user/DEFAULT.KYLIN_CAL_DT/ADMIN
+`请求路径:http://host:port/kylin/api/acl/table/learn_kylin/user/DEFAULT.KYLIN_CAL_DT/ADMIN`
 
 #### 响应示例
 ```json
@@ -67,14 +71,16 @@ http://host:port/kylin/api/acl/table/learn_kylin/user/DEFAULT.KYLIN_CAL_DT/ADMIN
 
 `访问路径 http://host:port/kylin/api/acl/table/{project}/{type}/{table}/{name}`
 
+`Content-Type: application/vnd.apache.kylin-v2+json`
+
 #### 路径变量
-* project - `必选` `string` project
-* type - `必选` `string`用来标示操作是用户还是组,取值:user/group
-* table - `必选` `string` table
-* name - `必选` `string` name
+* project - `必选` `string`，项目名称
+* Type - `必选` `string`，用来表示操作是用户操作还是用户组操作，取值：user/group
+* table - `必选` `string`，表名称
+* name - `必选` `string`，用户名
 
 #### 请求示例
-http://host:port/kylin/api/acl/table/learn_kylin/user/DEFAULT.KYLIN_CAL_DT/ADMIN
+`请求路径:http://host:port/kylin/api/acl/table/learn_kylin/user/DEFAULT.KYLIN_CAL_DT/ADMIN`
 
 #### 响应示例
 ```
