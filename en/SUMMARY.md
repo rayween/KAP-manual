@@ -90,6 +90,7 @@
     * [Calculated Member](kyanalyzer/calculated_member.en.md)
     * [Export Results](kyanalyzer/export.en.md)
     * [Save and Share Results](kyanalyzer/save_and_share.en.md)
+    * [Multi-node Deployment](kyanalyzer/multi-nodes_deploy.en.md)
 * [Integrate with the 3rd party](integration/README.md)
     * [Driver](driver/README.md)
         * [JDBC driver](driver/jdbc.en.md)

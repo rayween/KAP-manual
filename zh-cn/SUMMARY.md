@@ -91,6 +91,7 @@
     * [Calculated Member](kyanalyzer/calculated_member.cn.md)
     * [导出结果](kyanalyzer/export.cn.md)
     * [保存并共享结果](kyanalyzer/save_and_share.cn.md)
+    * [多节点部署](kyanalyzer/multi-nodes_deploy.cn.md)
 * [与可视化工具集成](integration/README.md)
     * [驱动程序](driver/README.md)
         * [JDBC驱动](driver/jdbc.cn.md)
