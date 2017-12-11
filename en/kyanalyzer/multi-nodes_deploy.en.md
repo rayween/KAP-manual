@@ -6,7 +6,7 @@ Firstly, modify the configuration file *conf/kyanalyzer.properties* for each KyA
 
 Secondly, do the following steps to modify the *repository/configuration.xml* file under KyAnalyzer installation directory of node1:
 
-- Under <Repository> domain, add DataSource configuration which uses mysql, for example:
+- Under < Repository > domain, add DataSource configuration which uses mysql, for example:
 
   ```
   <DataSources>
@@ -24,7 +24,7 @@ Secondly, do the following steps to modify the *repository/configuration.xml* fi
 
   Where, node0 is the host of mysql which each node can access, and jackrabbit is the database name under this mysql.
 
-- Under <Repository> domain, add FileSystem which uses mysql database, for example:
+- Under < Repository > domain, add FileSystem which uses mysql database, for example:
 
   ```
   <FileSystem class="org.apache.jackrabbit.core.fs.db.DbFileSystem"> 
@@ -33,7 +33,7 @@ Secondly, do the following steps to modify the *repository/configuration.xml* fi
   </FileSystem>
   ```
 
-- Under <Repository> domain, add DataStore which uses mysql database, for example:
+- Under < Repository > domain, add DataStore which uses mysql database, for example:
 
   ```
   <DataStore class="org.apache.jackrabbit.core.data.db.DbDataStore"> 
@@ -45,7 +45,7 @@ Secondly, do the following steps to modify the *repository/configuration.xml* fi
    </DataStore>
   ```
 
-- Under <Workspace> of <Repository> domain, modify FileSystem to the following based on previous DataSource configuration: 
+- Under < Workspace > of < Repository > domain, modify FileSystem to the following based on previous DataSource configuration: 
 
   ```
   <FileSystem class="org.apache.jackrabbit.core.fs.db.DbFileSystem"> 
@@ -54,7 +54,7 @@ Secondly, do the following steps to modify the *repository/configuration.xml* fi
   </FileSystem>
   ```
 
-- Under <Workspace> of <Repository> domain, modify PersistenceManager to the following based on previous DataSource configuration: 
+- Under < Workspace > of < Repository > domain, modify PersistenceManager to the following based on previous DataSource configuration: 
 
   ```
   <PersistenceManager class="org.apache.jackrabbit.core.persistence.pool.MySqlPersistenceManager"> 
@@ -63,7 +63,7 @@ Secondly, do the following steps to modify the *repository/configuration.xml* fi
   </PersistenceManager>
   ```
 
-- Under <Versioning> of <Repository> domain, modify FileSystem to the following based on previous DataSource configuration: 
+- Under < Versioning > of < Repository > domain, modify FileSystem to the following based on previous DataSource configuration: 
 
   ```
   <FileSystem class="org.apache.jackrabbit.core.fs.db.DbFileSystem"> 
@@ -72,7 +72,7 @@ Secondly, do the following steps to modify the *repository/configuration.xml* fi
   </FileSystem>
   ```
 
-- Under <Versioning> of <Repository> domain, modify PersistenceManager to the following based on previous DataSource configuration: 
+- Under < Versioning > of < Repository > domain, modify PersistenceManager to the following based on previous DataSource configuration: 
 
   ```
   <PersistenceManager class="org.apache.jackrabbit.core.persistence.pool.MySqlPersistenceManager"> 
@@ -82,7 +82,7 @@ Secondly, do the following steps to modify the *repository/configuration.xml* fi
 
   ```
 
-- Modify <Cluster> of <Repository> domain, set ID to node1, and modify Cluster to the following based on previous DataSource configuration: 
+- Modify < Cluster > of < Repository > domain, set ID to node1, and modify Cluster to the following based on previous DataSource configuration: 
 
   ```
   <Cluster id="node1" syncDelay="5"> 
@@ -92,9 +92,9 @@ Secondly, do the following steps to modify the *repository/configuration.xml* fi
   </Cluster>
   ```
 
-  Thirdly, copy the file *repository/configuration.xml* under node1 to other node, replace the file *repository/configuration.xml* under KyAnalyzer installation directory of each node, modify this file, and set the ID of <Cluster> in <Repository> domain to node2, node3 and etc.
+  Thirdly, copy the file *repository/configuration.xml* under node1 to other node, replace the file *repository/configuration.xml* under KyAnalyzer installation directory of each node, modify this file, and set the ID of < Cluster > in < Repository > domain to node2, node3 and etc.
 
-  Fourthly, if you have installed KyAnalyzer and started it, you need to modify the file *repository/data/workspaces/default/workspace.xml* and change <FileSystem> and <PersistenceManager> in it based on the configuration under <Workspace> of <Repository> domain in the above second step. If KyAnalyzer has not been started before, you may ignore this step.
+  Fourthly, if you have installed KyAnalyzer and started it, you need to modify the file *repository/data/workspaces/default/workspace.xml* and change < FileSystem > and < PersistenceManager > in it based on the configuration under < Workspace > of < Repository > domain in the above second step. If KyAnalyzer has not been started before, you may ignore this step.
 
   So far, you complete KyAnalyzer multi-node deployment. You may start KyAnalyzer under each node. Each node shares the same metadata.
 
